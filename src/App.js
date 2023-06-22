@@ -11,13 +11,13 @@ function App() {
     <Router>
       <Navbar/>
       <Routes>
-        <Route path="/netflix" element={<Navigate to="/netflix/home"/>}/>
-        <Route path="/netflix/home" element={<Browse name="Home"/>}/>
-        <Route path="/netflix/tvshows" element={<Browse name="Tv"/>}/>
-        <Route path="/netflix/movies" element={<Browse name="Movies"/>}/>
-        <Route path="/netflix/mylist" element={<MyList/>}/>
-        <Route path="/netflix/:type/:id" element={<Watch/>}/>
-        <Route path="/netflix/search/:name" element={<Search/>}/>
+        <Route path="/" element={<Navigate to="/home"/>}/>
+        <Route path="/home" element={<Browse name="Home"/>}/>
+        <Route path="/tvshows" element={<Browse name="Tv"/>}/>
+        <Route path="/movies" element={<Browse name="Movies"/>}/>
+        <Route path="/mylist" element={<MyList/>}/>
+        <Route path="/:type/:id" element={<Watch/>}/>
+        <Route path="/search/:name" element={<Search/>}/>
       </Routes>
       <Footer/>
     </Router>

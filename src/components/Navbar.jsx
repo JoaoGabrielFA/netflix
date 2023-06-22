@@ -42,13 +42,13 @@ function Navbar() {
   return (
     <section className={`${styles.navbar} Navbar`} style={{ background: `linear-gradient(to bottom, #000000, #${navbarColor})` }}>
       <div className={styles.navbarLeft}>
-        <img src='https://logodownload.org/wp-content/uploads/2014/10/netflix-logo-5.png' onClick={() => navigate('/netflix/home')}/>
+        <img src='https://logodownload.org/wp-content/uploads/2014/10/netflix-logo-5.png' onClick={() => navigate('/home')}/>
         <nav>
-          <Link className={thisPage === 'Home' ? styles.bold : ''} to='/netflix/home' onClick={() => changePage()}>Home</Link>
-          <Link className={thisPage === 'Tv' ? styles.bold : ''} to='/netflix/tvshows' onClick={() => changePage()}>TV Shows</Link>
-          <Link className={thisPage === 'Movies' ? styles.bold : ''} to='/netflix/movies' onClick={() => changePage()}>Movies</Link>
+          <Link className={thisPage === 'Home' ? styles.bold : ''} to='/home' onClick={() => changePage()}>Home</Link>
+          <Link className={thisPage === 'Tv' ? styles.bold : ''} to='/tvshows' onClick={() => changePage()}>TV Shows</Link>
+          <Link className={thisPage === 'Movies' ? styles.bold : ''} to='/movies' onClick={() => changePage()}>Movies</Link>
           <Link>News & Popular</Link>
-          <Link className={thisPage === 'mylist' ? styles.bold : ''} to='/netflix/mylist' onClick={() => changePage()}>My List</Link>
+          <Link className={thisPage === 'mylist' ? styles.bold : ''} to='/mylist' onClick={() => changePage()}>My List</Link>
         </nav>
       </div>
       <div className={styles.navbarRight}>
