@@ -21,7 +21,7 @@ function Card({ width, element, customClass }) {
   return (
     <div className={`${styles.card} ${styles[customClass]}`}>
       <Link 
-        to={`/netflix/${element.title ? 'movie' : 'tv'}/${element.id}`} 
+        to={`/${element.title ? 'movie' : 'tv'}/${element.id}`} 
         style={{ position: 'relative' }} 
         id={element.id}>
         <img
