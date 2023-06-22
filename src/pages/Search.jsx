@@ -9,6 +9,18 @@ function Search() {
   const { name } = useParams();
   const [searchData, setSearchData] = useState([]);
 
+  const [cardWidth, setCardWidth] = useState(window.innerWidth > 1024 ? ((window.innerWidth - 130) * 16.666 / 100)
+    : window.innerWidth > 800 ? ((window.innerWidth - 130) * 20 / 100)
+      : window.innerWidth > 600 ? ((window.innerWidth - 130) * 25 / 100)
+        : ((window.innerWidth - 130) * 33.333 / 100));
+
+  const attCardWidth = () => {
+    setCardWidth(window.innerWidth > 1024 ? ((window.innerWidth - 130) * 16.666 / 100)
+      : window.innerWidth > 800 ? ((window.innerWidth - 130) * 20 / 100)
+        : window.innerWidth > 600 ? ((window.innerWidth - 130) * 25 / 100)
+          : ((window.innerWidth - 130) * 33.333 / 100));
+  }
+
   useEffect(() => {
     const handleChange = async (value) => {
       const movies = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=a582086197c04ae62e80b81394a51086&query=${value}&include_adult=false`);
@@ -34,7 +46,7 @@ function Search() {
       <div className={styles.rowCards} style={{flexWrap: "wrap"}}>
         {searchData.length > 0 && searchData.map((element, key) => {
           if (element.poster_path != null) {
-            return <Card element={element} key={key} customClass={'page'}/>
+            return <Card element={element} key={key} customClass={'page'} width={cardWidth}/>
           }
         })}
       </div>
