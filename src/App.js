@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
+import {HashRouter as Router, Routes, Route, Navigate} from "react-router-dom";
 import Footer from "./components/Footer";
 import MyList from "./pages/MyList";
 import Watch from "./pages/Watch";
