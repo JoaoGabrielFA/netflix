@@ -14,7 +14,7 @@ function Navbar() {
   useEffect(() => {
     setInput(localStorage.getItem('SearchBarContent'))
     if (localStorage.getItem('SearchBarContent').length > 0) {  
-      navigate(`/netflix/search/${input}`);
+      navigate(`/search/${input}`);
     }
   }, [input, navigate]);
 
