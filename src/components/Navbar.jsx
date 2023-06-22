@@ -44,7 +44,7 @@ function Navbar() {
       <div className={styles.navbarLeft}>
         <img src='https://logodownload.org/wp-content/uploads/2014/10/netflix-logo-5.png' onClick={() => navigate('/netflix/home')}/>
         <nav>
-          <Link className={thisPage === 'Home' ? styles.bold : ''} to='/home' onClick={() => changePage()}>Home</Link>
+          <Link className={thisPage === 'Home' ? styles.bold : ''} to='/netflix/home' onClick={() => changePage()}>Home</Link>
           <Link className={thisPage === 'Tv' ? styles.bold : ''} to='/netflix/tvshows' onClick={() => changePage()}>TV Shows</Link>
           <Link className={thisPage === 'Movies' ? styles.bold : ''} to='/netflix/movies' onClick={() => changePage()}>Movies</Link>
           <Link>News & Popular</Link>
