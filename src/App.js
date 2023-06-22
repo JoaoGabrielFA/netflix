@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
+import Footer from "./components/Footer";
+import MyList from "./pages/MyList";
+import Watch from "./pages/Watch";
+import Search from "./pages/Search";
+import Browse from "./pages/Browse";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar/>
+      <Routes>
+        <Route path="/" element={<Navigate to="/netflix/home"/>}/>
+        <Route path="/netflix/home" element={<Browse name="Home"/>}/>
+        <Route path="/netflix/tvshows" element={<Browse name="Tv"/>}/>
+        <Route path="/netflix/movies" element={<Browse name="Movies"/>}/>
+        <Route path="/netflix/mylist" element={<MyList/>}/>
+        <Route path="/netflix/:type/:id" element={<Watch/>}/>
+        <Route path="/netflix/search/:name" element={<Search/>}/>
+      </Routes>
+      <Footer/>
+    </Router>
   );
 }
 

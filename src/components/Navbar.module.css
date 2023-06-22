@@ -1,0 +1,61 @@
+.navbar{
+  z-index: 3;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 100px);
+  padding: 10px 50px;
+  transition: background .5s ease;
+}
+
+.navbarLeft,
+.navbarRight{
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.navbarRight > *{
+  margin-left: 25px;
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.navbarLeft img{
+  width: 90px;
+  margin-right: 35px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.navbarLeft nav a:not(.bold){
+  color: #dbdbdb;
+  margin-right: 15px;
+  text-decoration: none;
+  transition: .5s;
+}
+
+.navbar_div nav a:hover{
+  color: #9f9f9f;
+}
+
+.bold{
+  margin-right: 15px;
+  text-decoration: none;
+  transition: .5s;
+  color: #FFFFFF;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.searchBar{
+  display: inherit;
+  background-color: #00000036;
+  font-size: 1rem;
+  padding: 10px 40px 8px;
+  border-radius: 0;
+  border: 1px solid white;
+  cursor: text;
+  transition: 1s;
+}
