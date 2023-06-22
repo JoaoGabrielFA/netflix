@@ -11,8 +11,8 @@ function App() {
     <Router>
       <Navbar/>
       <Routes>
-        <Route path="/" element={<Navigate to="/netflix/home"/>}/>
-        <Route path="/netflix/home" element={<Browse name="Home"/>}/>
+        <Route path="/" element={<Navigate to="/home"/>}/>
+        <Route path="/home" element={<Browse name="Home"/>}/>
         <Route path="/netflix/tvshows" element={<Browse name="Tv"/>}/>
         <Route path="/netflix/movies" element={<Browse name="Movies"/>}/>
         <Route path="/netflix/mylist" element={<MyList/>}/>
