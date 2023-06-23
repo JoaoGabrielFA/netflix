@@ -1,15 +1,14 @@
-import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
-import Row from '../components/Row';
+import { useParams } from 'react-router-dom';
+import { api_base, api_key } from '../database/tmdb';
 import Details from '../components/Details';
+import Row from '../components/Row';
 
 function Watch() {
   document.title = "Watch - Netflix";
+  localStorage.setItem('actualPage', '');
 
   window.scrollTo(0, 0);
-
-  const api_key = 'api_key=a582086197c04ae62e80b81394a51086';
-  const api_base = 'https://api.themoviedb.org/3';
 
   const { type, id } = useParams();
   const [data, setData] = useState([]);
@@ -18,7 +17,7 @@ function Watch() {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const response = await fetch(`${api_base}/${type}/${id}?${api_key}&append_to_response=videos`);
+        const response = await fetch(`${api_base}/${type}/${id}?${api_key}&include_adult=false&append_to_response=videos`);
         const data = await response.json();
         setData(data);
       } catch (error) {
@@ -47,8 +46,8 @@ function Watch() {
   
   return (
     <>
-      <Details data={data} type={type}/>
-      {relatedMovies.results && <Row name="Related" data={relatedMovies} />}
+      <Details data={data} type={type}/>{console.log(relatedMovies)}
+      {relatedMovies.results && relatedMovies.results.length !== 0 && <Row name="Related" data={relatedMovies}/>}
     </>
   )
 }

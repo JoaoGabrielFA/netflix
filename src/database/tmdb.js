@@ -1,5 +1,5 @@
-const api_key = 'api_key=a582086197c04ae62e80b81394a51086';
-const api_base = 'https://api.themoviedb.org/3';
+export const api_key = 'api_key=a582086197c04ae62e80b81394a51086';
+export const api_base = 'https://api.themoviedb.org/3';
 
 const getData = async (endpoint, filter) => {
   const req = await fetch(`${api_base}${endpoint}${api_key}&include_adult=false` + filter);

@@ -13,7 +13,7 @@ function Navbar() {
 
   useEffect(() => {
     setInput(localStorage.getItem('SearchBarContent'))
-    if (localStorage.getItem('SearchBarContent').length > 0) {  
+    if (localStorage.getItem('SearchBarContent').length > 0) {
       navigate(`/search/${input}`);
     }
   }, [input, navigate]);
@@ -39,10 +39,33 @@ function Navbar() {
     }, 1);
   }
 
+  const att = () =>{
+    const input = document.getElementById('searchBar');
+    const div = document.getElementById('searchBarDiv');
+
+    if (input.style.opacity === '0' || input.style.opacity === '') {
+      input.style.opacity = '1';
+      input.style.width = '270px';
+      input.style.padding = '0 8px';
+      div.style.padding = '4px 7px';
+      div.style.width = '300px';
+      div.style.borderColor = '#FFFFFF';
+      div.style.backgroundColor = '#00000036';
+    } else {
+      input.style.opacity = '0';
+      input.style.width = '0';
+      input.style.padding = '0';
+      div.style.padding = '0';
+      div.style.width = '24px';
+      div.style.borderColor = '#FFFFFF00';
+      div.style.backgroundColor = '#00000000';
+    }
+  }
+
   return (
     <section className={`${styles.navbar} Navbar`} style={{ background: `linear-gradient(to bottom, #000000, #${navbarColor})` }}>
       <div className={styles.navbarLeft}>
-        <img src='https://logodownload.org/wp-content/uploads/2014/10/netflix-logo-5.png' onClick={() => navigate('/home')}/>
+        <img src='https://logodownload.org/wp-content/uploads/2014/10/netflix-logo-5.png' onClick={() => navigate('/home')} />
         <nav>
           <Link className={thisPage === 'Home' ? styles.bold : ''} to='/home' onClick={() => changePage()}>Home</Link>
           <Link className={thisPage === 'Tv' ? styles.bold : ''} to='/tvshows' onClick={() => changePage()}>TV Shows</Link>
@@ -52,8 +75,10 @@ function Navbar() {
         </nav>
       </div>
       <div className={styles.navbarRight}>
-        <input id='searchBar' className={styles.searchBar} type='text' value={input} onChange={handleChange}></input>
-        <BsSearch />
+        <div id='searchBarDiv' className={styles.searchBar}>
+          <BsSearch className={styles.searchButton} onClick={att}/>
+          <input id='searchBar' className={styles.searchInput} type='text' value={input} onChange={handleChange}></input>
+        </div>
         <BsBell />
         <BsSquare />
       </div>

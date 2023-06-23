@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
-import { getMyList } from "../database/myList";
-import styles from "../components/Row.module.css";
-import Card from "../components/Card";
+import { useState, useEffect } from 'react';
+import { getMyList } from '../database/myList';
+import styles from '../components/Row.module.css';
+import Card from '../components/Card';
 
 function MyList() {
-  document.title = "My List - Netflix";
+  document.title = 'My List - Netflix';
+  localStorage.setItem('actualPage', 'mylist');
 
   const [myList, setMyList] = useState([]);
   const [cardWidth, setCardWidth] = useState(window.innerWidth > 1024 ? ((window.innerWidth - 130) * 16.666 / 100)
@@ -29,11 +30,11 @@ function MyList() {
   }, []);
   console.log(myList)
   return (
-    <div className={styles.row} style={{ paddingTop: "60px" }}>
+    <div className={styles.row} style={{ paddingTop: '60px' }}>
       {myList.length > 0 ? (
         <>
           <p>My List</p>
-          <div className={styles.rowCards} style={{ flexWrap: "wrap" }}>
+          <div className={styles.rowCards} style={{ flexWrap: 'wrap' }}>
             {myList.map((element, key) => {
               if (element.poster_path != null) {
                 return <Card element={element} key={key} customClass={'page'} width={cardWidth} />;

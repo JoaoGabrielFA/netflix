@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import { getLists } from "../database/tmdb";
-import Page from "../components/Page";
+import { useState, useEffect } from 'react';
+import { getLists } from '../database/tmdb';
+import Page from '../components/Page';
 
 function Browse({ name }) {
   document.title = `${name} - Netflix`;

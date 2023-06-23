@@ -1,5 +1,4 @@
-const api_key = 'api_key=a582086197c04ae62e80b81394a51086';
-const api_base = 'https://api.themoviedb.org/3';
+import { api_base, api_key } from '../database/tmdb';
 
 export let myList = [];
 myList = JSON.parse(localStorage.getItem('My List')) == null ? myList = [] : myList = JSON.parse(localStorage.getItem('My List', myList));

@@ -50,12 +50,34 @@
 }
 
 .searchBar{
-  display: inherit;
-  background-color: #00000036;
+  display: flex;
+  align-items: center;
+  width: 24px;
+  height: 60%;
   font-size: 1rem;
-  padding: 10px 40px 8px;
   border-radius: 0;
-  border: 1px solid white;
+  border: 1px solid transparent;
+  transition: .7s;
+}
+
+.searchInput{
+  height: 100%;
+  width: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: #FFFFFF;
+  font-size: 1.05rem;
+  opacity: 0;
   cursor: text;
-  transition: 1s;
+}
+
+.searchInput:focus{
+  outline: none;
+}
+
+.searchButton{
+  height: 100%;
+  aspect-ratio: 1/1;
+  font-size: 1.5rem;
 }
