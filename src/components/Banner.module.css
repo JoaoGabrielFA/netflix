@@ -71,3 +71,49 @@
 .bannerInfo:hover{
   background-color: #8585854b;
 }
+
+@media screen and (max-width:  600px) {
+  .banner{
+    height: 80%;
+  }
+  
+  .bannerMask{
+    align-items: flex-end;
+    justify-content: center;
+    background: linear-gradient(to top, #141414 10%, transparent 90%);
+  }
+  
+  .bannerContent{
+    align-items: center;
+    width: 90%;
+    margin-left: 0;
+    margin-bottom: 100px;
+  }
+  
+  .bannerContent h1{
+    font-size: 1.5rem;
+  }
+  
+  .bannerContent p{
+    display: none;
+  }
+
+  .bannerContent div{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+  }
+  
+  .bannerPlay,
+  .bannerInfo{
+    height: 40px;
+    width: 150px;
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  .bannerPlay span,
+  .bannerInfo span{
+    font-size: 1.2rem;
+  }
+}
