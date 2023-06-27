@@ -9,17 +9,17 @@ function Row({name, data}) {
   const [cardWidth, setCardWidth] = useState(window.innerWidth > 1024 ? ((window.innerWidth - 130)*16.666/100) 
                                             : window.innerWidth > 800 ? ((window.innerWidth - 130)*20/100) 
                                             : window.innerWidth > 600 ? ((window.innerWidth - 130)*25/100) 
-                                            : ((window.innerWidth - 130)*33.333/100));
+                                            : ((window.innerWidth - 70)*33.333/100));
   const [margin, setMargin] = useState(0);
   const [scrollx, setScrollx] = useState(0);
   const [leftButton, setLeftButton] = useState('none');
-  const [rightButton, setRightButton] = useState('inherit');
+  const [rightButton, setRightButton] = useState(window.innerWidth > 600 ? 'inherit' : 'none');
 
   const attCardWidth = () =>{
     setCardWidth(window.innerWidth > 1024 ? ((window.innerWidth - 130)*16.666/100) 
                 : window.innerWidth > 800 ? ((window.innerWidth - 130)*20/100) 
                 : window.innerWidth > 600 ? ((window.innerWidth - 130)*25/100) 
-                : ((window.innerWidth - 130)*33.333/100));
+                : ((window.innerWidth - 70)*33.333/100));
   }
 
   const attMargin = () =>{
@@ -47,10 +47,8 @@ function Row({name, data}) {
     if(window.innerWidth <= 600) {
       if (scrollx - rowSize >= ((listSize - 3) * - (cardWidth+5)) && window.innerWidth) {
         setScrollx(rowSize * (margin - 1));
-        setLeftButton('Inherit');
       } else {
         setScrollx((listSize - 3) * - (cardWidth+5));
-        setRightButton('none');
       }
     } else{
       if (scrollx - rowSize >= ((listSize - 6) * - (cardWidth+5)) && window.innerWidth) {
