@@ -38,6 +38,7 @@
 
 .footerButton{
   width: 86px;
+  text-align: center;
   padding: 7.5px;
   color: #8c8b8b;
   border: 1px solid #8c8b8b;
@@ -69,4 +70,45 @@
 
 .disclaimer a:hover{
   border-color: #FFFFFF;
+}
+
+@media screen and (max-width:  600px) {
+  .footer{
+    width: calc(90%);
+    padding: 60px 5% 0;
+  }
+
+  .footerMedia{
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .footerMedia > *{
+    margin: 0;
+  }
+  
+  .footerList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .footerList li{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .footerButton{
+    width: 100px;
+    margin: auto;
+  }
+  
+  .copyright{
+    padding-top: 30px;
+    color: #8c8b8b;
+    font-size: .9rem;
+    text-align: center;
+  }
 }
