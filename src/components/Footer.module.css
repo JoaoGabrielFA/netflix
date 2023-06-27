@@ -107,8 +107,11 @@
   
   .copyright{
     padding-top: 30px;
-    color: #8c8b8b;
-    font-size: .9rem;
     text-align: center;
+  }
+
+  .disclaimer, 
+  .disclaimer a{
+    font-size: .9rem;
   }
 }

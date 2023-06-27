@@ -50,3 +50,21 @@
 .page:last-child{
   margin-right: 0;
 }
+
+@media screen and (max-width:  600px) {
+  .card:first-child{
+    margin-left: 25px;
+  }
+  
+  .card:last-child{
+    margin-right: 25px;
+  }
+  
+  .page:nth-child(3n+1){
+    margin-left: 25px;
+  }
+  
+  .page:last-child{
+    margin-right: 0;
+  }
+}

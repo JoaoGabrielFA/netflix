@@ -44,12 +44,22 @@ function Row({name, data}) {
 
   function scrollRight() {
     setMargin(margin - 1)
-    if (scrollx - rowSize >= ((listSize - 6) * - (cardWidth+5))) {
-      setScrollx(rowSize * (margin - 1));
-      setLeftButton('Inherit');
-    } else {
-      setScrollx((listSize - 6) * - (cardWidth+5));
-      setRightButton('none');
+    if(window.innerWidth <= 600) {
+      if (scrollx - rowSize >= ((listSize - 3) * - (cardWidth+5)) && window.innerWidth) {
+        setScrollx(rowSize * (margin - 1));
+        setLeftButton('Inherit');
+      } else {
+        setScrollx((listSize - 3) * - (cardWidth+5));
+        setRightButton('none');
+      }
+    } else{
+      if (scrollx - rowSize >= ((listSize - 6) * - (cardWidth+5)) && window.innerWidth) {
+        setScrollx(rowSize * (margin - 1));
+        setLeftButton('Inherit');
+      } else {
+        setScrollx((listSize - 6) * - (cardWidth+5));
+        setRightButton('none');
+      }
     }
   }
 

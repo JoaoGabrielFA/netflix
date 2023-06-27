@@ -56,3 +56,20 @@
   display: flex;
   transition: 1s;
 }
+
+@media screen and (max-width:  600px) {
+  .row{
+    width: 100%;
+    margin-bottom: 30px;
+    overflow-x: hidden;
+  }
+  
+  .row p{
+    margin-left: 25px;
+    font-size: 1.2rem;
+  }
+
+  .rowCards{
+    overflow-x: auto;
+  }
+}
