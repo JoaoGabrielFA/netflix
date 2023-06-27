@@ -32,7 +32,7 @@ export const getHomeLists = async (language) => {
       data: await getData('/movie/popular?'+ language)
     },
     {
-      title: 'New Releses',
+      title: 'New Releases',
       data: await getData('/movie/upcoming?'+ language)
     },
     {

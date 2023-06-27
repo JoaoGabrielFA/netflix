@@ -60,12 +60,13 @@
 @media screen and (max-width:  600px) {
   .row{
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 0;
     overflow-x: hidden;
   }
   
   .row p{
     margin-left: 25px;
+    margin-bottom: 10px;
     font-size: 1.2rem;
   }
 
