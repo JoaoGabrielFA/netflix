@@ -81,3 +81,15 @@
   aspect-ratio: 1/1;
   font-size: 1.5rem;
 }
+
+@media screen and (max-width:  600px) {
+  .navbar{
+    justify-content: space-between;
+    width: 90%;
+    padding: 10px 5%;
+  }
+  
+  .navbarLeft nav a{
+    display: none;
+  }
+}
