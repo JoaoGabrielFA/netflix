@@ -47,7 +47,7 @@ function Watch() {
   return (
     <>
       <Details data={data} type={type}/>
-      {relatedMovies.results && relatedMovies.results.length !== 0 && <Row name="Related" data={relatedMovies}/>}
+      {relatedMovies.results && relatedMovies.results.length !== 0 && <Row name="More Like This" data={relatedMovies}/>}
     </>
   )
 }

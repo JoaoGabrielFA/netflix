@@ -53,15 +53,15 @@
 
 @media screen and (max-width:  600px) {
   .card:first-child{
-    margin-left: 25px;
+    margin-left: 2.5%;
   }
   
   .card:last-child{
-    margin-right: 25px;
+    margin-right: 2.5%;
   }
   
   .page:nth-child(3n+1){
-    margin-left: 25px;
+    margin-left: 2.5%;
   }
   
   .page:last-child{
