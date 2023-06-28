@@ -104,3 +104,76 @@
 .detailsTrailer{
   display: none;
 }
+
+@media screen and (max-width:  600px) {
+  .detailsImg{
+    padding-top: 50px;
+    margin-bottom: 70vw;
+    height: 60vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    box-shadow: 0 0 0 transparent;
+  }
+  
+  .detailsMask{
+    margin-top: 60vw;
+    height: auto;
+    background: transparent;
+  }
+  
+  .detailsContent{
+    height: auto;
+    width: 95%;
+    margin: auto;
+    margin-top: 15px;
+  }
+  
+  .detailsTitle{
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 2rem;
+  }
+  
+  .detailsOverview{
+    margin-top: 0px;
+    font-size: 1rem;
+    order: 1;
+  }
+  
+  .detailsData span{
+    margin: 15px 0;
+    margin-right: 10px;
+    font-size: .9rem;
+  }
+  
+  .detailsButtons{
+    margin-top: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .detailsPlay{
+    height: 50px;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 7px;
+    font-size: 1.2rem;
+    padding: 0;
+  }
+  
+  .detailsAddToMyList{
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    margin-right: 0;
+    margin-bottom: 5px;
+    font-size: 45px;
+    padding: 0;
+    color: #FFFFFF;
+    background-color: #6d6d6eb3;
+  }
+  
+  .detailsAddToMyList:hover{
+    background-color: #8585854b;
+  }
+}

@@ -11,7 +11,7 @@ function Banner({image, name, description, type, id}) {
           <div>
             <button className={styles.bannerPlay}><span>&#9654;</span> Play</button>
             <Link 
-              to={`/netflix/${type && type}/${id &&id}`} 
+              to={`/${type && type}/${id &&id}`} 
               id={id && id}>
               <button className={styles.bannerInfo}><span>&#9432;</span> More Info</button>
             </Link>

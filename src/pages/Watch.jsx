@@ -46,7 +46,7 @@ function Watch() {
   
   return (
     <>
-      <Details data={data} type={type}/>{console.log(relatedMovies)}
+      <Details data={data} type={type}/>
       {relatedMovies.results && relatedMovies.results.length !== 0 && <Row name="Related" data={relatedMovies}/>}
     </>
   )

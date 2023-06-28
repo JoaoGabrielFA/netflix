@@ -14,13 +14,13 @@ const getData = async (endpoint, filter) => {
 //language=pt-BR&
 
 export const getLists = async (name) =>{
-  if(name == 'Home'){
+  if(name === 'Home'){
     return getHomeLists('');
   }
-  if(name == 'Tv'){
+  if(name === 'Tv'){
     return getTvLists('');
   }
-  if(name == 'Movies'){
+  if(name === 'Movies'){
     return getMoviesLists('');
   }
 }
