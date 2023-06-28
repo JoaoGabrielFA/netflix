@@ -107,17 +107,16 @@
 
 @media screen and (max-width:  600px) {
   .detailsImg{
+    height: auto;
     padding-top: 50px;
-    margin-bottom: 70vw;
-    height: 60vw;
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: top;
     box-shadow: 0 0 0 transparent;
   }
   
   .detailsMask{
-    margin-top: 60vw;
+    margin-top: 45vw;
     height: auto;
     background: transparent;
   }

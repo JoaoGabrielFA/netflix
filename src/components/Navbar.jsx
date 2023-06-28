@@ -63,7 +63,7 @@ function Navbar() {
   }
 
   return (
-    <section className={`${styles.navbar} Navbar`} style={{ background: `linear-gradient(to bottom, #000000, #${navbarColor})` }}>
+    <header className={`${styles.navbar} Navbar`} style={{ background: `linear-gradient(to bottom, #000000, #${navbarColor})` }}>
       <div className={styles.navbarLeft}>
         <img src='https://logodownload.org/wp-content/uploads/2014/10/netflix-logo-5.png' onClick={() => navigate('/home')} />
         <nav>
@@ -82,7 +82,7 @@ function Navbar() {
         <BsBell />
         <BsSquare />
       </div>
-    </section>
+    </header>
   )
 }
 
