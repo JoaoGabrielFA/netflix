@@ -45,10 +45,10 @@ function Navbar() {
 
     if (input.style.opacity === '0' || input.style.opacity === '') {
       input.style.opacity = '1';
-      input.style.width = '270px';
+      input.style.width = '190px';
       input.style.padding = '0 8px';
       div.style.padding = '4px 7px';
-      div.style.width = '300px';
+      div.style.width = '230px';
       div.style.borderColor = '#FFFFFF';
       div.style.backgroundColor = '#00000036';
     } else {
