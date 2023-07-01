@@ -74,8 +74,8 @@
 
 @media screen and (max-width:  600px) {
   .footer{
-    width: calc(90%);
-    padding: 60px 5% 0;
+    width: calc(100% - 20px);
+    padding: 60px 10px 0;
   }
 
   .footerMedia{
