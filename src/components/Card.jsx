@@ -7,6 +7,7 @@ import { addToMyList, areInMyList } from '../database/myList';
 function Card({ width, element, customClass }) {
   const [inMyList, setInMyList] = useState(false);
   const [cardWidth, setCardWidth] = useState(width);
+  
   const handleAddToMyList = async () => {
     addToMyList(element.id, element.title ? 'movie' : 'tv');
     setInMyList(areInMyList(element.id));

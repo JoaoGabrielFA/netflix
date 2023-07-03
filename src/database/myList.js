@@ -21,8 +21,8 @@ export const getMyList = async () => {
 
 export const areInMyList = (id) => {
   let inMyList;
-  for(let i = 0; i < myList.length; i++){
-    if(myList[i].includes(id)){
+  for (let i = 0; i < myList.length; i++) {
+    if (myList[i].includes(id)) {
       inMyList = true;
       break;
     }

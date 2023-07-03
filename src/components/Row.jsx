@@ -7,7 +7,7 @@ function Row({name, data}) {
   let listSize = data.results.length;
 
   const [cardWidth, setCardWidth] = useState(window.innerWidth > 1024 ? ((window.innerWidth - 130)*16.666/100) 
-                                            : window.innerWidth > 800 ? ((window.innerWidth - 130)*20/100) 
+                                            : window.innerWidth > 768 ? ((window.innerWidth - 130)*20/100) 
                                             : window.innerWidth > 600 ? ((window.innerWidth - 130)*25/100) 
                                             : ((window.innerWidth - 70)*33.333/100));
   const [margin, setMargin] = useState(0);
@@ -17,7 +17,7 @@ function Row({name, data}) {
 
   const attCardWidth = () =>{
     setCardWidth(window.innerWidth > 1024 ? ((window.innerWidth - 130)*16.666/100) 
-                : window.innerWidth > 800 ? ((window.innerWidth - 130)*20/100) 
+                : window.innerWidth > 768 ? ((window.innerWidth - 130)*20/100) 
                 : window.innerWidth > 600 ? ((window.innerWidth - 130)*25/100) 
                 : ((window.innerWidth - 70)*33.333/100));
   }

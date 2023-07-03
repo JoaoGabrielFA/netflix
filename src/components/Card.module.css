@@ -67,4 +67,8 @@
   .page:last-child{
     margin-right: 0;
   }
+
+  .addToMyListButton:hover{
+    display: none;
+  }
 }

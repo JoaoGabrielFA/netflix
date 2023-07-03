@@ -9,16 +9,18 @@ function MyList() {
 
   const [myList, setMyList] = useState([]);
   const [cardWidth, setCardWidth] = useState(window.innerWidth > 1024 ? ((window.innerWidth - 130) * 16.666 / 100)
-    : window.innerWidth > 800 ? ((window.innerWidth - 130) * 20 / 100)
+    : window.innerWidth > 768 ? ((window.innerWidth - 130) * 20 / 100)
       : window.innerWidth > 600 ? ((window.innerWidth - 130) * 25 / 100)
         : ((window.innerWidth - 35) * 33.333 / 100));
 
   const attCardWidth = () => {
     setCardWidth(window.innerWidth > 1024 ? ((window.innerWidth - 130) * 16.666 / 100)
-      : window.innerWidth > 800 ? ((window.innerWidth - 130) * 20 / 100)
+      : window.innerWidth > 768 ? ((window.innerWidth - 130) * 20 / 100)
         : window.innerWidth > 600 ? ((window.innerWidth - 130) * 25 / 100)
           : ((window.innerWidth - 130) * 33.333 / 100));
   }
+
+  window.addEventListener('resize', attCardWidth);
 
   useEffect(() => {
     const loadMyList = async () => {
