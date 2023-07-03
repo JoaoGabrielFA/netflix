@@ -34,11 +34,6 @@
   margin-bottom: 25px; 
 }
 
-.bannerContent div{
-  display: flex;
-  justify-content: space-between;
-}
-
 .bannerPlay,
 .bannerInfo{
   height: 50px;
@@ -57,7 +52,8 @@
 }
 
 .bannerPlay{
-  width: 150px;
+  width: 30%;
+  margin-right: 20px;
   color: #000000;
   background-color: #FFFFFF;
 }
@@ -67,28 +63,12 @@
 }
 
 .bannerInfo{
-  width: 300px;
+  width: 60%;
   color: white;
   background-color: #6d6d6eb3;
 }
 
 .bannerInfo:hover{
-  background-color: #8585854b;
-}
-
-.bannerAddToMyList{
-  height: 50px;
-  aspect-ratio: 1/1;
-  border: none;
-  border-radius: 5px;
-  font-size: 45px;
-  padding: 0;
-  color: #FFFFFF;
-  background-color: #6d6d6eb3;
-  cursor: pointer;
-}
-
-.bannerAddToMyList:hover{
   background-color: #8585854b;
 }
 
@@ -127,20 +107,11 @@
   }
   
   .bannerPlay,
-  .bannerInfo,
-  .bannerAddToMyList{
+  .bannerInfo{
     height: 40px;
+    width: 150px;
     margin: 0;
     font-size: 1rem;
-  }
-
-  .bannerPlay{
-    width: 150px;
-  }
-
-  .bannerInfo,
-  .bannerAddToMyList{
-    width: 100px;
   }
   
   .bannerPlay span,
