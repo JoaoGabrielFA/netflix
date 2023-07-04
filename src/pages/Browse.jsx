@@ -7,7 +7,6 @@ function Browse({ name }) {
   window.scrollTo(0, 0);
   localStorage.setItem('actualPage', name);
 
-
   const [data, setData] = useState([]);
   const [banner, setBanner] = useState(null);
 
