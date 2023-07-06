@@ -70,7 +70,7 @@ function Navbar() {
           <Link className={thisPage === 'Home' ? styles.bold : ''} to='/home' onClick={() => changePage()}>Home</Link>
           <Link className={thisPage === 'Tv' ? styles.bold : ''} to='/tvshows' onClick={() => changePage()}>TV Shows</Link>
           <Link className={thisPage === 'Movies' ? styles.bold : ''} to='/movies' onClick={() => changePage()}>Movies</Link>
-          <Link>News & Popular</Link>
+          <Link className={thisPage === 'News' ? styles.bold : ''} to='/news' onClick={() => changePage()}>News & Popular</Link>
           <Link className={thisPage === 'mylist' ? styles.bold : ''} to='/mylist' onClick={() => changePage()}>My List</Link>
         </nav>
       </div>

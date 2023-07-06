@@ -4,6 +4,7 @@ import MyList from './pages/MyList';
 import Watch from './pages/Watch';
 import Search from './pages/Search';
 import Browse from './pages/Browse';
+import News from './pages/News';
 import Navbar from './components/Navbar';
 import MobileNavbar from './components/MobileNavbar';
 
@@ -16,6 +17,7 @@ function App() {
         <Route path='/home' element={<Browse name='Home'/>}/>
         <Route path='/tvshows' element={<Browse name='Tv'/>}/>
         <Route path='/movies' element={<Browse name='Movies'/>}/>
+        <Route path='/news' element={<News/>}/>
         <Route path='/mylist' element={<MyList/>}/>
         <Route path='/:type/:id' element={<Watch/>}/>
         <Route path='/search/:name' element={<Search/>}/>

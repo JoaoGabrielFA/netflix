@@ -23,6 +23,9 @@ export const getLists = async (name) =>{
   if(name === 'Movies'){
     return getMoviesLists('');
   }
+  if(name === 'News'){
+    return getNewsLists('');
+  }
 }
 
 export const getHomeLists = async (language) => {
@@ -210,4 +213,8 @@ export const getMoviesLists = async (language) => {
       data: await getData('/discover/movie?with_genres=37&'+ language, '&vote_count.gte=500')
     }
   ]
+}
+
+export const getNewsLists = async (language) => {
+  return await getData('/movie/upcoming?sort_by=relese_date&'+ language);
 }

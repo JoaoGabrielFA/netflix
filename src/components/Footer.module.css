@@ -30,6 +30,7 @@
   text-decoration: none;
   color: #8c8b8b;
   border-bottom: 1px solid transparent;
+  font-size: .8rem;
 }
 
 .footerList li a:hover{
@@ -37,8 +38,9 @@
 }
 
 .footerButton{
-  width: 86px;
+  width: 100px;
   text-align: center;
+  font-size: .8rem;
   padding: 7.5px;
   color: #8c8b8b;
   border: 1px solid #8c8b8b;
@@ -52,7 +54,7 @@
 
 .copyright{
   color: #8c8b8b;
-  font-size: .9rem;
+  font-size: .7rem;
 }
 
 .disclaimer{
@@ -101,7 +103,6 @@
   }
   
   .footerButton{
-    width: 100px;
     margin: auto;
   }
   

@@ -27,7 +27,6 @@
 }
 
 .detailsTitle{
-  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   text-shadow: 1px 1px #000000;
   color: white;
@@ -35,14 +34,12 @@
 }
 
 .detailsOverview{
-  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   text-shadow: 1px 1px #000000;
   color: white;
 }
 
 .detailsData span{
-  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   text-shadow: 1px 1px #000000;
   color: #AAAAAA;
@@ -60,7 +57,6 @@
   border-radius: 5px;
   margin-right: 20px;
   font-size: 1.2rem;
-  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   padding: 10px 12px;
   color: #000000;
@@ -89,7 +85,6 @@
   border-radius: 50%;
   margin-right: 20px;
   font-size: 45px;
-  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   padding: 0;
   color: #000000;

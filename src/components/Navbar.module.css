@@ -29,6 +29,10 @@
   cursor: pointer;
 }
 
+.navbarLeft nav a{
+  font-size: .9rem;
+}
+
 .navbarLeft nav a:not(.bold){
   color: #dbdbdb;
   margin-right: 15px;

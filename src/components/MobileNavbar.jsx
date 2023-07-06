@@ -44,7 +44,7 @@ function MobileNavbar() {
           <label className={styles.navbarButtonLabel}>TV SHOWS</label>
         </li>
       </Link>
-      <Link to='/home' onClick={() => changePage()}>
+      <Link to='/news' onClick={() => changePage()}>
         <li className={styles.navbarButton}>
           {thisPage === 'News' ? (
             <BsHouseFill className={styles.navbarButtonIcon} />
