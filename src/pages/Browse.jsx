@@ -7,9 +7,6 @@ function Browse({ name }) {
   window.scrollTo(0, 0);
   localStorage.setItem('actualPage', name);
 
-  let date = new Date().toJSON().slice(0, 10);
-  console.log(date);
-
   const [data, setData] = useState([]);
   const [banner, setBanner] = useState(null);
 
