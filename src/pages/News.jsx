@@ -7,26 +7,37 @@ function News() {
   window.scrollTo(0, 0);
   localStorage.setItem('actualPage', 'News');
 
-  let date = new Date().toJSON().slice(5, 7);
-  console.log(date);
-
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const loadData = async () => {
-      setData(await getLists('News'));
+      const fetchedData = await getLists('News');
+      if (fetchedData && fetchedData.results && fetchedData.results.length > 0) {
+        fetchedData.results.sort((a, b) => {
+          const dateA = new Date(a.release_date);
+          const dateB = new Date(b.release_date);
+          return dateA - dateB;
+        });
+      }
+      setData(fetchedData);
     };
 
     loadData();
   }, []);
 
+  const today = new Date();
+  const lastMonth = new Date(today);
+  lastMonth.setDate(today.getDate() - 30);
+  lastMonth.toISOString().slice(0, 10);
+  
   return (
     <div style={{ width: 'calc(100% - 20px)', padding: '65px 10px 10px' }}>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
-        {data && data.results && data.results.length > 0 && data.results.map((element, key) => {
-          if(0 + element.release_date.slice(6, 7) >= new Date().toJSON().slice(5, 7))
-          return <NewsCard data={element} key={key}/>
-        })}
+        {data && data.results && data.results.length > 0 && data.results
+          .filter(element => new Date(element.release_date) >= new Date(today))
+          .map((element, key) => (
+            <NewsCard data={element} key={key} />
+          ))}
       </div>
     </div>
   )

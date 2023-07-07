@@ -216,5 +216,5 @@ export const getMoviesLists = async (language) => {
 }
 
 export const getNewsLists = async (language) => {
-  return await getData('/movie/upcoming?sort_by=relese_date&'+ language);
+  return await getData('/movie/upcoming?'+ language);
 }
