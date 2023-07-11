@@ -28,9 +28,8 @@ body{
   cursor: pointer;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-height: 600px) {
   body {
-    orientation: portrait;
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
     -o-transform: rotate(-90deg);
