@@ -27,19 +27,3 @@ body{
 ::-webkit-scrollbar-thumb:hover{
   cursor: pointer;
 }
-
-@media screen and (max-height: 600px) {
-  body {
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-    overflow: hidden;
-    position: fixed;
-    width: 100vh;
-    height: 100vw;
-    top: 0;
-    left: 0;
-  }
-}
