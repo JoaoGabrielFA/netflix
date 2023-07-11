@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { getLists } from "../database/tmdb";
-import NewsCard from "../components/NewsCard";
+import NewsPage from "../components/NewsPage";
 
 function News() {
   document.title = `News - Netflix`;
@@ -24,22 +24,9 @@ function News() {
 
     loadData();
   }, []);
-
-  const today = new Date();
-  const lastMonth = new Date(today);
-  lastMonth.setDate(today.getDate() - 30);
-  lastMonth.toISOString().slice(0, 10);
   
   return (
-    <div style={{ width: 'calc(100% - 20px)', padding: '65px 10px 10px' }}>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        {data && data.results && data.results.length > 0 && data.results
-          .filter(element => new Date(element.release_date) >= new Date(today))
-          .map((element, key) => (
-            <NewsCard data={element} key={key} />
-          ))}
-      </div>
-    </div>
+    <NewsPage data={data}/>
   )
 }
 

@@ -15,5 +15,32 @@ body{
 }
 
 ::-webkit-scrollbar {
-  width: 0;
+  width: 12px;
+  background-color: #000000;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #ab0000;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    orientation: portrait;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    overflow: hidden;
+    position: fixed;
+    width: 100vh;
+    height: 100vw;
+    top: 0;
+    left: 0;
+  }
 }
