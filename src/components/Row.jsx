@@ -2,24 +2,19 @@ import { useState } from 'react';
 import styles from './Row.module.css';
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
 import Card from './Card';
+import { responsiveRowCardWidth } from '../database/cardWidth';
 
 function Row({name, data}) {
-  let listSize = data.results.length;
+  let listSize = data.length;
 
-  const [cardWidth, setCardWidth] = useState(window.innerWidth > 1024 ? ((window.innerWidth - 130)*16.666/100) 
-                                            : window.innerWidth > 768 ? ((window.innerWidth - 130)*20/100) 
-                                            : window.innerWidth > 600 ? ((window.innerWidth - 130)*25/100) 
-                                            : ((window.innerWidth - 70)*33.333/100));
+  const [cardWidth, setCardWidth] = useState(responsiveRowCardWidth);
   const [margin, setMargin] = useState(0);
   const [scrollx, setScrollx] = useState(0);
   const [leftButton, setLeftButton] = useState('none');
   const [rightButton, setRightButton] = useState(window.innerWidth > 600 ? 'inherit' : 'none');
 
   const attCardWidth = () =>{
-    setCardWidth(window.innerWidth > 1024 ? ((window.innerWidth - 130)*16.666/100) 
-                : window.innerWidth > 768 ? ((window.innerWidth - 130)*20/100) 
-                : window.innerWidth > 600 ? ((window.innerWidth - 130)*25/100) 
-                : ((window.innerWidth - 70)*33.333/100));
+    setCardWidth(responsiveRowCardWidth);
   }
 
   const attMargin = () =>{
@@ -69,7 +64,7 @@ function Row({name, data}) {
         <SlArrowRight className={styles.arrows} style={{ display: rightButton, height: (cardWidth*3/2) }} onClick={scrollRight} />
       </div>
       <div className={styles.rowCards} style={{ marginLeft: scrollx}}>
-        {data.results.length > 0 && data.results.map((element, key) =>{
+        {data.length > 0 && data.map((element, key) =>{
           if(element.poster_path != null && element.backdrop_path != null){
             return <Card width={cardWidth} element={element} key={key}/>
           } else {

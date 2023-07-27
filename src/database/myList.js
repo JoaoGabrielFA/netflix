@@ -1,4 +1,4 @@
-import { api_base, api_key } from '../database/tmdb';
+import { api_base, api_key } from '../database/tmdbAPI';
 
 export let myList = [];
 myList = JSON.parse(localStorage.getItem('My List')) == null ? myList = [] : myList = JSON.parse(localStorage.getItem('My List', myList));

@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
-import { api_base, api_key } from '../database/tmdb';
 import Details from '../components/Details';
 import Row from '../components/Row';
+import LoadingScreen from '../components/LoadingScreen';
+import { searchById } from "../database/tmdbAPI";
 
 function Watch() {
   document.title = "Watch - Netflix";
@@ -13,41 +14,30 @@ function Watch() {
   const { type, id } = useParams();
   const [data, setData] = useState([]);
   const [related, setRelated] = useState([]);
+  const [isLoading, setIsLoading] = useState();
 
   useEffect(() => {
     const loadData = async () => {
-      try {
-        const response = await fetch(`${api_base}/${type}/${id}?${api_key}&include_adult=false&append_to_response=videos`);
-        const data = await response.json();
-        setData(data);
-      } catch (error) {
-        console.error(error);
-      }
+      setIsLoading(true);
+      await searchById(type, id).then(resp => {
+        setData(resp);
+        setRelated(resp.recommendations.results);
+      });
+      setIsLoading(false);
     };
     loadData();
-  }, [api_base, type, id, api_key]);
-  
-  useEffect(() => {
-    const loadDataa = async () => {
-      try {
-        const response = await fetch(`${api_base}/${type}/${id}?${api_key}&append_to_response=recommendations`);
-        const related = await response.json();
-        setRelated(related.recommendations.results);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    loadDataa();
-  }, [api_base, type, id, api_key]);
+  }, [id]);
 
-  const relatedMovies = {
-    results: related || []
-  }
-  
   return (
     <>
-      <Details data={data} type={type}/>
-      {relatedMovies.results && relatedMovies.results.length !== 0 && <Row name="More Like This" data={relatedMovies}/>}
+      {isLoading ? (
+        <LoadingScreen />
+      ) : (
+        <>
+          <Details data={data} type={type} />
+          {related && related.length !== 0 && <Row name="More Like This" data={related} />}
+        </>
+      )}
     </>
   )
 }

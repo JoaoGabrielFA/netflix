@@ -74,6 +74,13 @@
   border-color: #FFFFFF;
 }
 
+@media screen and (max-width:  1024px) {
+  .footer{
+    width: 80%;
+    padding: 60px 10% 0;
+  }
+}
+
 @media screen and (max-width:  600px) {
   .footer{
     width: calc(100% - 20px);

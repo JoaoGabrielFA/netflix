@@ -1,32 +1,50 @@
-import { useState, useEffect } from "react";
-import { getLists } from "../database/tmdb";
-import NewsPage from "../components/NewsPage";
+import styles from '../components/NewsPage.module.css';
+import NewsCard from '../components/NewsCard';
+import LoadingScreen from '../components/LoadingScreen';
+import { useEffect, useState } from 'react';
+import { getData } from '../database/tmdbAPI';
 
 function News() {
   document.title = `News - Netflix`;
   window.scrollTo(0, 0);
   localStorage.setItem('actualPage', 'News');
 
+  const today = new Date();
+  const lastMonth = new Date(today);
+  lastMonth.setDate(today.getDate() - 30);
+  lastMonth.toISOString().slice(0, 10);
+
   const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const loadData = async () => {
-      const fetchedData = await getLists('News');
-      if (fetchedData && fetchedData.results && fetchedData.results.length > 0) {
-        fetchedData.results.sort((a, b) => {
-          const dateA = new Date(a.release_date);
-          const dateB = new Date(b.release_date);
-          return dateA - dateB;
-        });
-      }
-      setData(fetchedData);
-    };
-
-    loadData();
+    getData('/movie/upcoming?').then(resp => {
+      const sortedData = resp.sort((a, b) => {
+        const dateA = new Date(a.release_date);
+        const dateB = new Date(b.release_date);
+        return dateA - dateB;
+      });
+      setData(sortedData);
+      setIsLoading(false);
+    });
   }, []);
-  
+
   return (
-    <NewsPage data={data}/>
+    <>
+      {isLoading ? (
+        <LoadingScreen />
+      ) : (
+        <>
+          <section className={styles.newsPage}>
+            <div className={styles.newsPageList}>
+              {data.filter(element => new Date(element.release_date) >= new Date(today)).map((element, key) => (
+                element.backdrop_path && <NewsCard data={element} key={key} />
+              ))}
+            </div>
+          </section>
+        </>
+      )}
+    </>
   )
 }
 

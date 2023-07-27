@@ -45,6 +45,7 @@ function Navbar() {
 
     if (input.style.opacity === '0' || input.style.opacity === '') {
       input.style.opacity = '1';
+      input.focus();
       input.style.width = '50%';
       input.style.padding = '0 8px';
       div.style.padding = '4px 7px';

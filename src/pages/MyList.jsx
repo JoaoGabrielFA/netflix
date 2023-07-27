@@ -2,22 +2,19 @@ import { useState, useEffect } from 'react';
 import { getMyList } from '../database/myList';
 import styles from '../components/Row.module.css';
 import Card from '../components/Card';
+import LoadingScreen from '../components/LoadingScreen';
+import { responsiveCardWidth } from '../database/cardWidth';
 
 function MyList() {
   document.title = 'My List - Netflix';
   localStorage.setItem('actualPage', 'mylist');
 
   const [myList, setMyList] = useState([]);
-  const [cardWidth, setCardWidth] = useState(window.innerWidth > 1024 ? ((window.innerWidth - 130) * 16.666 / 100)
-    : window.innerWidth > 768 ? ((window.innerWidth - 130) * 20 / 100)
-      : window.innerWidth > 600 ? ((window.innerWidth - 130) * 25 / 100)
-        : ((window.innerWidth - 35) * 33.333 / 100));
+  const [cardWidth, setCardWidth] = useState(responsiveCardWidth);
+  const [isLoading, setIsLoading] = useState(true);
 
   const attCardWidth = () => {
-    setCardWidth(window.innerWidth > 1024 ? ((window.innerWidth - 130) * 16.666 / 100)
-      : window.innerWidth > 768 ? ((window.innerWidth - 130) * 20 / 100)
-        : window.innerWidth > 600 ? ((window.innerWidth - 130) * 25 / 100)
-          : ((window.innerWidth - 130) * 33.333 / 100));
+    setCardWidth(responsiveCardWidth);
   }
 
   window.addEventListener('resize', attCardWidth);
@@ -26,29 +23,36 @@ function MyList() {
     const loadMyList = async () => {
       const list = await getMyList();
       setMyList(list);
+      setIsLoading(false);
     };
-
     loadMyList();
   }, []);
-  console.log(myList)
+
   return (
-    <div className={styles.row} style={{ paddingTop: '60px' }}>
-      {myList.length > 0 ? (
+    <>
+      {isLoading ? (
+        <LoadingScreen />
+      ) : (
         <>
-          <p>My List</p>
-          <div className={styles.rowCards} style={{ flexWrap: 'wrap' }}>
-            {myList.map((element, key) => {
-              if (element.poster_path != null) {
-                return <Card element={element} key={key} customClass={'page'} width={cardWidth} />;
-              }
-            })}
+          <div className={styles.row} style={{ paddingTop: '60px' }}>
+            {myList.length > 0 ? (
+              <>
+                <p>My List</p>
+                <div className={styles.rowCards} style={{ flexWrap: 'wrap' }}>
+                  {myList.map((element, key) => {
+                    if (element.poster_path != null) {
+                      return <Card element={element} key={key} customClass={'page'} width={cardWidth} />;
+                    }
+                  })}
+                </div>
+              </>
+            ) : (
+              <p style={{ margin: 'auto', minHeight: '80vh' }}>Sua lista está vazia.</p>
+            )}
           </div>
         </>
-      ) : (
-        <p style={{ margin: 'auto', minHeight: '80vh' }}>Sua lista está vazia.</p>
       )}
-
-    </div>
+    </>
   )
 }
 

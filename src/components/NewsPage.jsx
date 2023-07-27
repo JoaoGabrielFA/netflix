@@ -1,22 +1,47 @@
 import styles from './NewsPage.module.css';
 import NewsCard from './NewsCard';
+import LoadingScreen from '../components/LoadingScreen';
+import { useEffect, useState } from 'react';
+import { getData } from '../database/tmdbAPI';
 
-function NewsPage({data}) {
+function NewsPage() {
   const today = new Date();
   const lastMonth = new Date(today);
   lastMonth.setDate(today.getDate() - 30);
   lastMonth.toISOString().slice(0, 10);
 
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    getData('/movie/upcoming?').then(resp => {
+      const sortedData = resp.sort((a, b) => {
+        const dateA = new Date(a.release_date);
+        const dateB = new Date(b.release_date);
+        return dateA - dateB;
+      });
+      setData(sortedData);
+      setIsLoading(false);
+    });
+  }, []);
+
   return (
-    <div className={styles.newsPage}>
-      <div className={styles.newsPageList}>
-        {data && data.results && data.results.length > 0 && data.results
-          .filter(element => new Date(element.release_date) >= new Date(today))
-          .map((element, key) => (
-            <NewsCard data={element} key={key} />
-          ))}
-      </div>
-    </div>
+    <>
+      {isLoading ? (
+        <LoadingScreen />
+      ) : (
+        <>
+          <section className={styles.newsPage}>
+            <div className={styles.newsPageList}>
+              {data.filter(element => new Date(element.release_date) >= new Date(today)).map((element, key) => (
+                <NewsCard data={element} key={key} />
+              ))}
+            </div>
+          </section>
+        </>
+      )}
+    </>
+
   )
 }
 

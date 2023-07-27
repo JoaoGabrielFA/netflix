@@ -10,7 +10,7 @@ function Details({ data, type }) {
   const [videoId, setVideoId] = useState('');
   const [inMyList, setInMyList] = useState(false);
   const playerRef = useRef(null);
-
+console.log(data)
   useEffect(() => {
     if (data.videos && data.videos.results && data.videos.results[0]) {
       setVideoId(data.videos.results[0].key);
@@ -64,7 +64,6 @@ function Details({ data, type }) {
           <div className={styles.detailsContent}>
             <h1 className={styles.detailsTitle}>{data.title || data.name}</h1>
             <h3 id='overview' className={styles.detailsOverview}>
-              {console.log(document.getElementById('overview') && document.getElementById('overview').offsetHeight)}
               {data.overview && data.overview.length > 220 ? data.overview.substring(0, 220) + "..." : data.overview}
             </h3>
             <div className={styles.detailsData}>
