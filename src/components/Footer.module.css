@@ -1,18 +1,18 @@
-.footer{
+.footer {
   display: flex;
   flex-direction: column;
   width: calc(100% - 500px);
   padding: 60px 250px 0;
 }
 
-.footerMedia > *{
+.footerMedia>* {
   margin-right: 30px;
   color: #FFFFFF;
   font-size: 1.5rem;
   cursor: pointer;
 }
 
-.footerList{
+.footerList {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -21,23 +21,23 @@
   color: #8c8b8b;
 }
 
-.footerList li{
+.footerList li {
   width: 25%;
   margin-bottom: 10px;
 }
 
-.footerList li a{
+.footerList li a {
   text-decoration: none;
   color: #8c8b8b;
   border-bottom: 1px solid transparent;
   font-size: .8rem;
 }
 
-.footerList li a:hover{
+.footerList li a:hover {
   border-bottom: 1px solid #8c8b8b;
 }
 
-.footerButton{
+.footerButton {
   width: 100px;
   text-align: center;
   font-size: .8rem;
@@ -47,79 +47,79 @@
   cursor: pointer;
 }
 
-.footerButton:hover{
+.footerButton:hover {
   color: #FFFFFF;
   border-color: #FFFFFF;
 }
 
-.copyright{
+.copyright {
   color: #8c8b8b;
   font-size: .7rem;
 }
 
-.disclaimer{
+.disclaimer {
   color: #8c8b8b;
   text-align: center;
   padding: 1rem 0 0;
   border-top: 1px solid #8c8b8b;
 }
 
-.disclaimer a{
+.disclaimer a {
   color: #FFFFFF;
   text-decoration: none;
   border-bottom: 1px solid transparent;
 }
 
-.disclaimer a:hover{
+.disclaimer a:hover {
   border-color: #FFFFFF;
 }
 
-@media screen and (max-width:  1024px) {
-  .footer{
+@media screen and (max-width: 1024px) {
+  .footer {
     width: 80%;
     padding: 60px 10% 0;
   }
 }
 
-@media screen and (max-width:  600px) {
-  .footer{
+@media screen and (max-width: 600px) {
+  .footer {
     width: calc(100% - 20px);
     padding: 60px 10px 0;
   }
 
-  .footerMedia{
+  .footerMedia {
     display: flex;
     justify-content: space-around;
   }
-  
-  .footerMedia > *{
+
+  .footerMedia>* {
     margin: 0;
   }
-  
-  .footerList{
+
+  .footerList {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 30px;
   }
-  
-  .footerList li{
+
+  .footerList li {
     width: 100%;
     text-align: center;
     margin-bottom: 10px;
   }
-  
-  .footerButton{
+
+  .footerButton {
     margin: auto;
   }
-  
-  .copyright{
+
+  .copyright {
     padding-top: 30px;
     text-align: center;
   }
 
-  .disclaimer, 
-  .disclaimer a{
+  .disclaimer,
+  .disclaimer a {
     font-size: .9rem;
   }
 }

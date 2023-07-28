@@ -1,4 +1,4 @@
-.loadingScreen{
+.loadingScreen {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,7 +7,7 @@
   background-color: #000000;
 }
 
-.loadIcon{
+.loadIcon {
   font-size: 5rem;
   color: red;
   animation: spin 1s linear infinite;
@@ -17,6 +17,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

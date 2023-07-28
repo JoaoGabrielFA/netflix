@@ -1,18 +1,18 @@
-.newsPage{
+.newsPage {
   width: 55%;
   min-width: 600px;
-  margin: 0 auto; 
+  margin: 0 auto;
   padding: 65px 10px 10px;
 }
 
-.newsPageList{
+.newsPageList {
   display: flex;
   flex-direction: column;
 }
 
-@media screen and (max-width:  600px) {
-  .newsPage{
-    width: calc(100% - 20px); 
+@media screen and (max-width: 600px) {
+  .newsPage {
+    width: calc(100% - 20px);
     min-width: 0;
     margin: 0;
   }

@@ -1,9 +1,9 @@
 import styles from './LoadingScreen.module.css';
-import {BiLoaderAlt} from 'react-icons/bi'
+import { BiLoaderAlt } from 'react-icons/bi'
 
 function LoadingScreen() {
   return (
-    <div className={styles.loadingScreen}><BiLoaderAlt className={styles.loadIcon}/></div>
+    <div className={styles.loadingScreen}><BiLoaderAlt className={styles.loadIcon} /></div>
   )
 }
 

@@ -1,23 +1,24 @@
-import styles from './Banner.module.css';
 import { Link } from 'react-router-dom';
+import styles from './Banner.module.css';
 
-function Banner({ banner }) {
-
-  const name = banner && (banner.title || banner.name);
+function Banner({ data }) {
+  const {title, name, backdrop_path, overview, id} = data;
+  const backdropImage = `url(https://image.tmdb.org/t/p/original/${backdrop_path})`;
+  const bannerOverview = overview?.length > 210 ? overview.substring(0, 210) + '...' : overview;
+  const bannerTitle = name?.length > 40 ? name.substring(0, 40) + '...' : name || title?.length > 40 ? title.substring(0, 40) + '...' : title;
+  const type = title ? 'movie' : 'tv';
 
   return (
     <>
-      {banner && (
-        <section className={styles.banner} style={{ backgroundImage: `url('https://image.tmdb.org/t/p/original/${banner.backdrop_path}')` }}>
+      {data && (
+        <section className={styles.banner} style={{ backgroundImage: backdropImage }}>
           <div className={styles.bannerMask}>
             <div className={styles.bannerContent}>
-              <h1>{name.length > 40 ? name.substring(0, 40) + '...' : name}</h1>
-              <p>{banner.overview.length > 210 ? banner.overview.substring(0, 210) + '...' : banner.overview}</p>
+              <h1>{bannerTitle}</h1>
+              <p>{bannerOverview}</p>
               <div>
                 <button className={styles.bannerPlay}><span>&#9654;</span> Play</button>
-                <Link
-                  to={`/${banner.title ? 'movie' : 'tv'}/${banner.id}`}
-                  id={banner.id}>
+                <Link to={`/${type}/${id}`}id={id}>
                   <button className={styles.bannerInfo}><span>&#9432;</span> More Info</button>
                 </Link>
               </div>

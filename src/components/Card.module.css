@@ -1,29 +1,29 @@
-.card{
+.card {
   position: relative;
 }
 
-.card:first-child{
+.card:first-child {
   margin-left: 50px;
 }
 
-.card:last-child{
+.card:last-child {
   margin-right: 50px;
 }
 
-.card img{
+.card img {
   aspect-ratio: 2/3;
   margin: 0 2.5px;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.card:hover > .addToMyListButton{
+.card:hover>.addToMyListButton {
   display: initial;
 }
 
-.addToMyListButton{
+.addToMyListButton {
   display: none;
-  position: absolute; 
+  position: absolute;
   bottom: 10px;
   right: 10px;
   height: 50px;
@@ -39,36 +39,36 @@
   cursor: pointer;
 }
 
-.addToMyListButton:hover{
+.addToMyListButton:hover {
   background-color: #c5c4c4;
 }
 
-.page:nth-child(6n+1){
+.page:nth-child(6n+1) {
   margin-left: 50px;
 }
 
-.page:last-child{
+.page:last-child {
   margin-right: 0;
 }
 
-@media screen and (max-width:  600px) {
-  .card:first-child{
+@media screen and (max-width: 600px) {
+  .card:first-child {
     margin-left: 10px;
   }
-  
-  .card:last-child{
+
+  .card:last-child {
     margin-right: 10px;
   }
-  
-  .page:nth-child(3n+1){
+
+  .page:nth-child(3n+1) {
     margin-left: 10px;
   }
-  
-  .page:last-child{
+
+  .page:last-child {
     margin-right: 0;
   }
 
-  .addToMyListButton:hover{
+  .addToMyListButton:hover {
     display: none;
   }
 }

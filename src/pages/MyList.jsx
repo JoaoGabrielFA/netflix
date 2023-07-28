@@ -7,6 +7,7 @@ import { responsiveCardWidth } from '../database/cardWidth';
 
 function MyList() {
   document.title = 'My List - Netflix';
+  window.scrollTo(0, 0);
   localStorage.setItem('actualPage', 'mylist');
 
   const [myList, setMyList] = useState([]);
@@ -29,7 +30,7 @@ function MyList() {
   }, []);
 
   return (
-    <>
+    <main>
       {isLoading ? (
         <LoadingScreen />
       ) : (
@@ -52,7 +53,7 @@ function MyList() {
           </div>
         </>
       )}
-    </>
+    </main>
   )
 }
 

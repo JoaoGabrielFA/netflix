@@ -1,13 +1,13 @@
-.banner{
+.banner {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-size: cover;
   background-position: top;
   box-shadow: 0 -100px 100px #141414 inset;
   margin-bottom: -110px;
 }
 
-.bannerMask{
+.bannerMask {
   display: flex;
   align-items: center;
   width: 100%;
@@ -15,27 +15,27 @@
   background: linear-gradient(to right, #141414 30%, transparent 70%);
 }
 
-.bannerContent{
+.bannerContent {
   display: flex;
   flex-direction: column;
   width: 550px;
   margin-left: 50px;
 }
 
-.bannerContent h1{
+.bannerContent h1 {
   font-size: 3.5rem;
   color: #FFFFFF;
 }
 
-.bannerContent p{
+.bannerContent p {
   font-size: 1.1rem;
   color: #FFFFFF;
   text-shadow: 1px 1px #000000;
-  margin-bottom: 25px; 
+  margin-bottom: 25px;
 }
 
 .bannerPlay,
-.bannerInfo{
+.bannerInfo {
   height: 50px;
   border: none;
   border-radius: 5px;
@@ -46,76 +46,76 @@
 }
 
 .bannerPlay span,
-.bannerInfo span{
+.bannerInfo span {
   font-size: 1.5rem;
   margin-right: 5px;
 }
 
-.bannerPlay{
+.bannerPlay {
   width: 30%;
   margin-right: 20px;
   color: #000000;
   background-color: #FFFFFF;
 }
 
-.bannerPlay:hover{
+.bannerPlay:hover {
   background-color: #c5c4c4;
 }
 
-.bannerInfo{
+.bannerInfo {
   width: 60%;
   color: white;
   background-color: #6d6d6eb3;
 }
 
-.bannerInfo:hover{
+.bannerInfo:hover {
   background-color: #8585854b;
 }
 
-@media screen and (max-width:  600px) {
-  .banner{
-    height: 80%;
+@media screen and (max-width: 600px) {
+  .banner {
+    height: 80vh;
     padding-bottom: 20px;
   }
-  
-  .bannerMask{
+
+  .bannerMask {
     align-items: flex-end;
     justify-content: center;
     background: linear-gradient(to top, #141414 10%, transparent 90%);
   }
-  
-  .bannerContent{
+
+  .bannerContent {
     align-items: center;
     width: 90%;
     margin-left: 0;
     margin-bottom: 100px;
   }
-  
-  .bannerContent h1{
+
+  .bannerContent h1 {
     font-size: 1.5rem;
     text-align: center;
   }
-  
-  .bannerContent p{
+
+  .bannerContent p {
     display: none;
   }
 
-  .bannerContent div{
+  .bannerContent div {
     display: flex;
     justify-content: space-between;
     width: 90%;
   }
-  
+
   .bannerPlay,
-  .bannerInfo{
+  .bannerInfo {
     height: 40px;
     width: 150px;
     margin: 0;
     font-size: 1rem;
   }
-  
+
   .bannerPlay span,
-  .bannerInfo span{
+  .bannerInfo span {
     display: none;
   }
 }

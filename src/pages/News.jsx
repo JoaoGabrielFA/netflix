@@ -30,7 +30,7 @@ function News() {
   }, []);
 
   return (
-    <>
+    <main>
       {isLoading ? (
         <LoadingScreen />
       ) : (
@@ -44,7 +44,7 @@ function News() {
           </section>
         </>
       )}
-    </>
+    </main>
   )
 }
 

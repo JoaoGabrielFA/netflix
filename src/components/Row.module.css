@@ -1,17 +1,17 @@
-.row{
+.row {
   width: 100%;
   margin-bottom: 30px;
   overflow-x: hidden;
 }
 
-.row p{
+.row p {
   margin-left: 50px;
   color: #FFFFFF;
   font-size: 1.5rem;
   font-weight: 600;
 }
 
-.arrows{
+.arrows {
   position: absolute;
   width: 50px;
   color: transparent;
@@ -20,57 +20,57 @@
   cursor: pointer;
 }
 
-.row:hover .arrows{
+.row:hover .arrows {
   color: #FFFFFF;
 
 }
 
-.arrows:hover{
+.arrows:hover {
   background-color: #000000b7;
 }
 
-.arrows:first-child{
+.arrows:first-child {
   left: 0;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   background: linear-gradient(to right, #000000ae, #00000000);
 }
 
-.arrows:first-child:hover{
+.arrows:first-child:hover {
   background-color: #0000009f;
 }
 
-.arrows:last-child{
+.arrows:last-child {
   right: 0;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   background: linear-gradient(to left, #000000ae, #00000000);
 }
 
-.arrows:last-child:hover{
+.arrows:last-child:hover {
   background-color: #0000009f;
 }
 
-.rowCards{
+.rowCards {
   position: relative;
   display: flex;
   transition: 1s;
 }
 
-@media screen and (max-width:  600px) {
-  .row{
+@media screen and (max-width: 600px) {
+  .row {
     width: 100%;
     margin-bottom: 0;
     overflow-x: hidden;
   }
-  
-  .row p{
+
+  .row p {
     margin-left: 10px;
     margin-bottom: 10px;
     font-size: 1.2rem;
   }
 
-  .rowCards{
+  .rowCards {
     overflow-x: auto;
   }
 }

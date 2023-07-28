@@ -5,10 +5,10 @@ function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerMedia}>
-        <BsFacebook/>
-        <BsInstagram/>
-        <BsTwitter/>
-        <BsYoutube/>
+        <BsFacebook />
+        <BsInstagram />
+        <BsTwitter />
+        <BsYoutube />
       </div>
       <ul className={styles.footerList}>
         <li><a href='#'>Audio Description</a></li>

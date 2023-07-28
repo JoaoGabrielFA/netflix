@@ -24,15 +24,15 @@ function Search() {
   })
 
   return (
-    <div className={styles.row} style={{paddingTop: '80px'}}>
-      <div className={styles.rowCards} style={{flexWrap: 'wrap'}}>
+    <main className={styles.row} style={{ paddingTop: '80px' }}>
+      <div className={styles.rowCards} style={{ flexWrap: 'wrap' }}>
         {searchData.length > 0 && searchData.map((element, key) => {
           if (element.poster_path != null) {
-            return <Card element={element} key={key} customClass={'page'} width={cardWidth}/>
+            return <Card element={element} key={key} customClass={'page'} width={cardWidth} />
           }
         })}
       </div>
-    </div>
+    </main>
   )
 }
 

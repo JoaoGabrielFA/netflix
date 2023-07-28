@@ -39,7 +39,7 @@ function Navbar() {
     }, 1);
   }
 
-  const att = () =>{
+  const att = () => {
     const input = document.getElementById('searchBar');
     const div = document.getElementById('searchBarDiv');
 
@@ -77,7 +77,7 @@ function Navbar() {
       </div>
       <div className={styles.navbarRight}>
         <div id='searchBarDiv' className={styles.searchBar}>
-          <BsSearch className={styles.searchButton} onClick={att}/>
+          <BsSearch className={styles.searchButton} onClick={att} />
           <input id='searchBar' className={styles.searchInput} type='text' value={input} onChange={handleChange}></input>
         </div>
         <BsBell />

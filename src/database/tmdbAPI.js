@@ -2,47 +2,47 @@ export const api_key = 'api_key=a582086197c04ae62e80b81394a51086';
 export const api_base = 'https://api.themoviedb.org/3';
 
 export const getData = async (endpoint, filter) => {
-  try{
+  try {
     const page1 = await fetch(`${api_base + endpoint + api_key}&page=1&include_adult=false${filter}`).then(resp => resp.json()).then(resp => resp.results);
     const page2 = await fetch(`${api_base + endpoint + api_key}&page=2&include_adult=false${filter}`).then(resp => resp.json()).then(resp => resp.results);
     const page3 = await fetch(`${api_base + endpoint + api_key}&page=3&include_adult=false${filter}`).then(resp => resp.json()).then(resp => resp.results);
-    const data  = [...page1, ...page2, ...page3];
+    const data = [...page1, ...page2, ...page3];
     return data;
-  } catch(error) {
+  } catch (error) {
     console.log('ERROR: ' + error);
-    return[];
+    return [];
   }
 }
 
 export const search = async (value) => {
-  try{
+  try {
     let moviesData = await fetch(`${api_base + '/search/movie?' + api_key}&query=${value}&include_adult=false`).then(resp => resp.json()).then(resp => resp.results);
     let tvData = await fetch(`${api_base + '/search/tv?' + api_key}&query=${value}&include_adult=false`).then(resp => resp.json()).then(resp => resp.results);
-    if(moviesData.length >= tvData.length){
-      moviesData = [...moviesData.slice(0,12), ...tvData.slice(0,12)];
+    if (moviesData.length >= tvData.length) {
+      moviesData = [...moviesData.slice(0, 12), ...tvData.slice(0, 12)];
       return moviesData;
     } else {
-      tvData = [...tvData.slice(0,12), ...moviesData.slice(0,12)];
+      tvData = [...tvData.slice(0, 12), ...moviesData.slice(0, 12)];
       return tvData;
     }
-  } catch(error) {
+  } catch (error) {
     console.log('ERROR: ' + error);
-    return[];
+    return [];
   }
 }
 
 export const searchById = async (type, id) => {
-  try{
+  try {
     const response = await fetch(`${api_base}/${type}/${id}?${api_key}&include_adult=false&append_to_response=videos,recommendations`).then(resp => resp.json());
     return response;
-  } catch(error) {
+  } catch (error) {
     console.log('ERROR: ' + error);
-    return[];
+    return [];
   }
 }
 
-export const getLists = async (name) =>{
-  switch(name){
+export const getLists = async (name) => {
+  switch (name) {
     case 'Home': return getHomeLists('');
     case 'Tv': return getTvLists('');
     case 'Movies': return getMoviesLists('');
@@ -50,7 +50,7 @@ export const getLists = async (name) =>{
 }
 
 export const getHomeLists = async () => {
-  return[
+  return [
     {
       title: 'Trending Now',
       data: await getData('/movie/popular?')
@@ -79,7 +79,7 @@ export const getHomeLists = async () => {
 }
 
 export const getTvLists = async () => {
-  return[
+  return [
     {
       title: 'Trending Now',
       data: await getData(`/discover/tv?popular&`, '&vote_count.gte=5000')
@@ -152,7 +152,7 @@ export const getTvLists = async () => {
 }
 
 export const getMoviesLists = async () => {
-  return[
+  return [
     {
       title: 'Trending Now',
       data: await getData('/movie/popular?')

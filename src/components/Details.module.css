@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
-.detailsImg{
+.detailsImg {
   width: 100vw;
   height: 100vh;
   margin-left: auto;
@@ -9,14 +9,14 @@
   box-shadow: 0 -100px 100px #141414 inset;
 }
 
-.detailsMask{
+.detailsMask {
   display: flex;
   width: 100%;
   height: 100%;
   background: linear-gradient(to right, #14141492 30%, transparent 70%);
 }
 
-.detailsContent{
+.detailsContent {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -26,31 +26,31 @@
   margin-top: 120px;
 }
 
-.detailsTitle{
+.detailsTitle {
   font-weight: 700;
   text-shadow: 1px 1px #000000;
   color: white;
   font-size: 3rem;
 }
 
-.detailsOverview{
+.detailsOverview {
   font-weight: 400;
   text-shadow: 1px 1px #000000;
   color: white;
 }
 
-.detailsData span{
+.detailsData span {
   font-weight: 700;
   text-shadow: 1px 1px #000000;
   color: #AAAAAA;
   margin-right: 15px;
 }
 
-.detailsButtons{
+.detailsButtons {
   display: flex;
 }
 
-.detailsPlay{
+.detailsPlay {
   height: 50px;
   width: 150px;
   border: none;
@@ -64,21 +64,21 @@
   cursor: pointer;
 }
 
-.detailsPlay:disabled{
+.detailsPlay:disabled {
   background-color: #c5c4c4;
   cursor: not-allowed;
 }
 
-.detailsPlay span{
+.detailsPlay span {
   font-size: 1.5rem;
   margin-right: 5px;
 }
 
-.detailsPlay:hover{
+.detailsPlay:hover {
   background-color: #c5c4c4;
 }
 
-.detailsAddToMyList{
+.detailsAddToMyList {
   height: 50px;
   width: 50px;
   border: none;
@@ -92,16 +92,16 @@
   cursor: pointer;
 }
 
-.detailsAddToMyList:hover{
+.detailsAddToMyList:hover {
   background-color: #c5c4c4;
 }
 
-.detailsTrailer{
+.detailsTrailer {
   display: none;
 }
 
-@media screen and (max-width:  600px) {
-  .detailsImg{
+@media screen and (max-width: 600px) {
+  .detailsImg {
     height: auto;
     padding-top: 50px;
     background-size: contain;
@@ -109,44 +109,44 @@
     background-position: top;
     box-shadow: 0 0 0 transparent;
   }
-  
-  .detailsMask{
+
+  .detailsMask {
     margin-top: 45vw;
     height: auto;
     background: transparent;
   }
-  
-  .detailsContent{
+
+  .detailsContent {
     height: auto;
     width: calc(100% - 20px);
     margin: auto;
     margin-top: 15px;
   }
-  
-  .detailsTitle{
+
+  .detailsTitle {
     margin: 0;
     margin-bottom: 5px;
     font-size: 2rem;
   }
-  
-  .detailsOverview{
+
+  .detailsOverview {
     margin-top: 0px;
     font-size: 1rem;
     order: 1;
   }
-  
-  .detailsData span{
+
+  .detailsData span {
     margin: 15px 0;
     margin-right: 10px;
     font-size: .9rem;
   }
-  
-  .detailsButtons{
+
+  .detailsButtons {
     margin-top: 15px;
     flex-wrap: wrap;
   }
-  
-  .detailsPlay{
+
+  .detailsPlay {
     height: 50px;
     width: 100%;
     margin-right: 0;
@@ -154,8 +154,8 @@
     font-size: 1.2rem;
     padding: 0;
   }
-  
-  .detailsAddToMyList{
+
+  .detailsAddToMyList {
     height: 50px;
     width: 100%;
     border-radius: 5px;
@@ -166,8 +166,8 @@
     color: #FFFFFF;
     background-color: #6d6d6eb3;
   }
-  
-  .detailsAddToMyList:hover{
+
+  .detailsAddToMyList:hover {
     background-color: #8585854b;
   }
 }

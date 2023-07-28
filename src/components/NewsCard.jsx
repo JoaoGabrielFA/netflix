@@ -2,7 +2,7 @@ import styles from './NewsCard.module.css';
 import { Link } from 'react-router-dom';
 
 function NewsCard({ data }) {
-  const months = ['','JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+  const months = ['', 'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
   return (
     <div className={styles.newsCard}>
       <div className={styles.newsCardDate}>
@@ -15,7 +15,7 @@ function NewsCard({ data }) {
       </div>
       <div className={styles.newsCardInfo}>
         <div className={styles.newsCardInfoImg}
-          style={{backgroundImage: `url(https://image.tmdb.org/t/p/original/${data.backdrop_path})`}}>
+          style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original/${data.backdrop_path})` }}>
         </div>
         <span className={styles.newsCardInfoName}>
           {data.title}
@@ -23,7 +23,7 @@ function NewsCard({ data }) {
         <span className={styles.newsCardInfoOverview}>
           {
             data.overview.length > 150 ?
-            data.overview.substring(0, 150) + "..." : data.overview
+              data.overview.substring(0, 150) + "..." : data.overview
           }
         </span>
         <Link to={`/movie/${data.id}`}>

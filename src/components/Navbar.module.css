@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
   z-index: 3;
   position: fixed;
   display: flex;
@@ -9,42 +9,42 @@
 }
 
 .navbarLeft,
-.navbarRight{
+.navbarRight {
   height: 50px;
   display: flex;
   align-items: center;
 }
 
-.navbarRight > *{
+.navbarRight>* {
   margin-left: 25px;
   font-size: 1.5rem;
   color: #FFFFFF;
   cursor: pointer;
 }
 
-.navbarLeft img{
+.navbarLeft img {
   width: 90px;
   margin-right: 35px;
   object-fit: cover;
   cursor: pointer;
 }
 
-.navbarLeft nav a{
+.navbarLeft nav a {
   font-size: .9rem;
 }
 
-.navbarLeft nav a:not(.bold){
+.navbarLeft nav a:not(.bold) {
   color: #dbdbdb;
   margin-right: 15px;
   text-decoration: none;
   transition: .5s;
 }
 
-.navbar_div nav a:hover{
+.navbar_div nav a:hover {
   color: #9f9f9f;
 }
 
-.bold{
+.bold {
   margin-right: 15px;
   text-decoration: none;
   transition: .5s;
@@ -53,7 +53,7 @@
   pointer-events: none;
 }
 
-.searchBar{
+.searchBar {
   display: flex;
   align-items: center;
   width: 24px;
@@ -64,7 +64,7 @@
   transition: .7s;
 }
 
-.searchInput{
+.searchInput {
   height: 100%;
   width: 0;
   padding: 0;
@@ -76,32 +76,32 @@
   cursor: text;
 }
 
-.searchInput:focus{
+.searchInput:focus {
   outline: none;
 }
 
-.searchButton{
+.searchButton {
   height: 100%;
   aspect-ratio: 1/1;
   font-size: 1.5rem;
 }
 
-@media screen and (max-width:  600px) {
-  .navbar{
+@media screen and (max-width: 600px) {
+  .navbar {
     justify-content: space-between;
     width: calc(100% - 20px);
     padding: 10px;
   }
 
-  .navbarLeft img{
+  .navbarLeft img {
     margin-right: 0;
   }
-  
-  .navbarLeft nav a{
+
+  .navbarLeft nav a {
     display: none;
   }
 
-  .navbarRight{
+  .navbarRight {
     margin: 0;
   }
 }

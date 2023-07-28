@@ -1,23 +1,21 @@
-import styles from './Details.module.css';
-import { BsPlusLg, BsCheckLg } from "react-icons/bs";
 import React, { useRef, useState, useEffect } from 'react';
 import YouTube from 'react-youtube';
+import styles from './Details.module.css';
+import { BsPlusLg, BsCheckLg } from 'react-icons/bs';
 import { addToMyList, areInMyList } from '../database/myList';
 
 function Details({ data, type }) {
+  const { id, title, name, backdrop_path, overview, runtime, genres, number_of_episodes, first_air_date, release_date, videos } = data;
+  const [inMyList, setInMyList] = useState(false);
   const [playerVisible, setPlayerVisible] = useState(false);
   const [player, setPlayer] = useState(null);
-  const [videoId, setVideoId] = useState('');
-  const [inMyList, setInMyList] = useState(false);
+  const [videoId, setVideoId] = useState(videos?.results?.[0]?.key);
   const playerRef = useRef(null);
-console.log(data)
-  useEffect(() => {
-    if (data.videos && data.videos.results && data.videos.results[0]) {
-      setVideoId(data.videos.results[0].key);
-    }
-
-    setInMyList(areInMyList(data.id));
-  }, [data]);
+  const backdropImage = `url(https://image.tmdb.org/t/p/original/${backdrop_path})`;
+  const myListButtonHoverTitle = inMyList ? "Remove from My List" : "Add to My List";
+  const myListButtonIcon = inMyList ? <BsCheckLg /> : <BsPlusLg />;
+  const releaseYear = release_date?.slice(0, 4) || first_air_date?.slice(0, 4);
+  const runtimeOrEpisodes = runtime && (runtime > 60 ? Math.floor(runtime / 60) + 'h' + (runtime - (Math.floor(runtime / 60) * 60)) + 'min' : runtime + 'min') || (number_of_episodes && number_of_episodes + " episodes") || "Coming Soon";
 
   const onPlayerReady = (event) => {
     setPlayer(event.target);
@@ -38,7 +36,7 @@ console.log(data)
     }
   };
 
-  function exitFullscreenHandler() {
+  const exitFullscreenHandler = () => {
     try {
       if (!document.fullscreenElement && !document.webkitFullscreenElement) {
         pauseVideo();
@@ -48,48 +46,43 @@ console.log(data)
     }
   }
 
+  const handleAddToMyList = async () => {
+    addToMyList(id, type);
+    setInMyList(areInMyList(id));
+  };
+
+  useEffect(() => {
+    setVideoId(videos?.results?.[0]?.key);
+
+    setInMyList(areInMyList(id));
+  }, [data]);  
+
   document.addEventListener('fullscreenchange', exitFullscreenHandler);
   document.addEventListener('webkitfullscreenchange', exitFullscreenHandler);
 
-  const handleAddToMyList = async () => {
-    addToMyList(data.id, type);
-    setInMyList(areInMyList(data.id));
-  };
-
   return (
     <>
-      {window.innerWidth <= 600 && <div style={{height: '70px'}}></div>}
-      <section className={styles.detailsImg} style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original/${data.backdrop_path})` }}>
+      {window.innerWidth <= 600 && <div style={{ height: '70px' }}></div>}
+      <section className={styles.detailsImg} style={{ backgroundImage: backdropImage}}>
         <div className={styles.detailsMask}>
           <div className={styles.detailsContent}>
-            <h1 className={styles.detailsTitle}>{data.title || data.name}</h1>
-            <h3 id='overview' className={styles.detailsOverview}>
-              {data.overview && data.overview.length > 220 ? data.overview.substring(0, 220) + "..." : data.overview}
-            </h3>
+            <h1 className={styles.detailsTitle}>{title || name}</h1>
+            <h3 className={styles.detailsOverview}>{overview}</h3>
             <div className={styles.detailsData}>
-              <span>
-                {data.runtime && (data.runtime > 60 ?
-                  Math.floor(data.runtime / 60) + 'h' + (data.runtime - (Math.floor(data.runtime / 60) * 60)) + 'min' : data.runtime + 'min')
-                  || (data.number_of_episodes && data.number_of_episodes + " episodes") || "Coming Soon"
-                }
-              </span>
-              <span>{data.release_date && data.release_date.slice(0, 4) || data.first_air_date && data.first_air_date.slice(0, 4)}</span>
-              <span>{data.genres && data.genres[0] && data.genres[0].name}</span>
-              <span>{data.genres && data.genres[1] && data.genres[1].name}</span>
+              <span>{runtimeOrEpisodes}</span>
+              <span>{releaseYear}</span>
+              <span>{genres?.[0]?.name}</span>
+              <span>{genres?.[1]?.name}</span>
             </div>
             <div className={styles.detailsButtons}>
-              <button className={styles.detailsPlay} onClick={playVideo} disabled={player ? false : true}>
-                <span>&#9654;</span> Play
-              </button>
-              <button className={styles.detailsAddToMyList} onClick={handleAddToMyList} title={inMyList ? "Remove from My List" : "Add to My List"}>
-                {inMyList ? <BsCheckLg /> : <BsPlusLg />}
-              </button>
+              <button className={styles.detailsPlay} onClick={playVideo} disabled={player ? false : true}><span>&#9654;</span> Play</button>
+              <button className={styles.detailsAddToMyList} onClick={handleAddToMyList} title={myListButtonHoverTitle}>{myListButtonIcon}</button>
             </div>
           </div>
         </div>
         <div ref={playerRef}>
           <YouTube
-            key={data.id}
+            key={id}
             style={{ display: `${playerVisible ? 'inherit' : 'none'}` }}
             className={styles.detailsTrailer}
             videoId={videoId}

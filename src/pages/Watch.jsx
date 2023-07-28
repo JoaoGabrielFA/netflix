@@ -29,7 +29,7 @@ function Watch() {
   }, [id]);
 
   return (
-    <>
+    <main>
       {isLoading ? (
         <LoadingScreen />
       ) : (
@@ -38,7 +38,7 @@ function Watch() {
           {related && related.length !== 0 && <Row name="More Like This" data={related} />}
         </>
       )}
-    </>
+    </main>
   )
 }
 
