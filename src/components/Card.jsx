@@ -8,8 +8,14 @@ function Card({ width, element, customClass }) {
   const {id, title, poster_path} = element;
   const [inMyList, setInMyList] = useState(false);
   const [cardWidth, setCardWidth] = useState(width);
-  const posterImage = `https://image.tmdb.org/t/p/w400/${poster_path}`;
+  const myListButtonHoverTitle = inMyList ? "Remove from My List" : "Add to My List";
+  const myListButtonIcon = inMyList ? <BsCheckLg /> : <BsPlusLg />;
+  const thisPosterImage = `https://image.tmdb.org/t/p/w400/${poster_path}`;
   const type = title ? 'movie' : 'tv';
+
+  const clearSearchBar = () => {
+    localStorage.setItem('SearchBarContent', '');
+  }
 
   const handleAddToMyList = async () => {
     addToMyList(id, type);
@@ -18,26 +24,23 @@ function Card({ width, element, customClass }) {
 
   useEffect(() => {
     setInMyList(areInMyList(id));
-    setCardWidth(width)
+    setCardWidth(width);
   })
 
   return (
     <div className={`${styles.card} ${styles[customClass]}`}>
       <Link
         to={`/${type}/${id}`}
-        style={{ position: 'relative' }}
         id={id}>
         <img
           style={{ width: cardWidth }}
-          onClick={() => localStorage.setItem('SearchBarContent', '')}
-          src={posterImage}
+          onClick={clearSearchBar}
+          src={thisPosterImage}
           alt={title}
           id={id}
         />
       </Link>
-      <button className={styles.addToMyListButton} onClick={handleAddToMyList} title={inMyList ? 'Remove from My List' : 'Add to My List'}>
-        {inMyList ? <BsCheckLg /> : <BsPlusLg />}
-      </button>
+      <button className={styles.addToMyListButton} onClick={handleAddToMyList} title={myListButtonHoverTitle}>{myListButtonIcon}</button>
     </div>
   )
 }

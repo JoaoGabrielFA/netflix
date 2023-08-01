@@ -1,0 +1,24 @@
+.navbarButton {
+  width: 100%;
+  text-decoration: none;
+}
+
+.navbarButtonLi {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  padding: 10px 0;
+  color: white;
+  list-style: none;
+}
+
+.navbarButtonIcon {
+  font-size: 1.8rem;
+  margin-bottom: 3px;
+}
+
+.navbarButtonLabel {
+  font-size: .6rem;
+}

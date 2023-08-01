@@ -3,19 +3,19 @@ import styles from './Banner.module.css';
 
 function Banner({ data }) {
   const {title, name, backdrop_path, overview, id} = data;
-  const backdropImage = `url(https://image.tmdb.org/t/p/original/${backdrop_path})`;
-  const bannerOverview = overview?.length > 210 ? overview.substring(0, 210) + '...' : overview;
-  const bannerTitle = name?.length > 40 ? name.substring(0, 40) + '...' : name || title?.length > 40 ? title.substring(0, 40) + '...' : title;
+  const thisBackdropImage = `url(https://image.tmdb.org/t/p/original/${backdrop_path})`;
+  const thisOverview = overview?.length > 210 ? overview.substring(0, 210) + '...' : overview;
+  const thisTitle = (name?.length > 40 ? name.substring(0, 40) + '...' : name) || (title?.length > 40 ? title.substring(0, 40) + '...' : title);
   const type = title ? 'movie' : 'tv';
 
   return (
     <>
       {data && (
-        <section className={styles.banner} style={{ backgroundImage: backdropImage }}>
+        <section className={styles.banner} style={{ backgroundImage: thisBackdropImage }}>
           <div className={styles.bannerMask}>
             <div className={styles.bannerContent}>
-              <h1>{bannerTitle}</h1>
-              <p>{bannerOverview}</p>
+              <h1>{thisTitle}</h1>
+              <p>{thisOverview}</p>
               <div>
                 <button className={styles.bannerPlay}><span>&#9654;</span> Play</button>
                 <Link to={`/${type}/${id}`}id={id}>

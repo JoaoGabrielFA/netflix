@@ -8,7 +8,7 @@ import { responsiveCardWidth } from '../database/cardWidth';
 function MyList() {
   document.title = 'My List - Netflix';
   window.scrollTo(0, 0);
-  localStorage.setItem('actualPage', 'mylist');
+  localStorage.setItem('actualPage', 'MyList');
 
   const [myList, setMyList] = useState([]);
   const [cardWidth, setCardWidth] = useState(responsiveCardWidth);

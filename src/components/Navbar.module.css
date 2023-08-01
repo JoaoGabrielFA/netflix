@@ -22,7 +22,12 @@
   cursor: pointer;
 }
 
-.navbarLeft img {
+.logo{
+  display: flex;
+}
+
+.logo img {
+  margin: auto;
   width: 90px;
   margin-right: 35px;
   object-fit: cover;
@@ -51,39 +56,6 @@
   color: #FFFFFF;
   font-weight: 600;
   pointer-events: none;
-}
-
-.searchBar {
-  display: flex;
-  align-items: center;
-  width: 24px;
-  height: 60%;
-  font-size: 1rem;
-  border-radius: 0;
-  border: 1px solid transparent;
-  transition: .7s;
-}
-
-.searchInput {
-  height: 100%;
-  width: 0;
-  padding: 0;
-  border: none;
-  background-color: transparent;
-  color: #FFFFFF;
-  font-size: 1.05rem;
-  opacity: 0;
-  cursor: text;
-}
-
-.searchInput:focus {
-  outline: none;
-}
-
-.searchButton {
-  height: 100%;
-  aspect-ratio: 1/1;
-  font-size: 1.5rem;
 }
 
 @media screen and (max-width: 600px) {

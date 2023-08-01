@@ -26,7 +26,11 @@ function Footer() {
       </ul>
       <p className={styles.footerButton}>Service Code</p>
       <p className={styles.copyright}>&copy; 1997-2023 Netflix, Inc.</p>
-      <p className={styles.disclaimer}>Developed by <a href='https://www.linkedin.com/in/joao-gabriel-fa/' target='_blank'>João Gabriel de Freitas Antunes</a> based on Netflix site to study React.js, all the data is from the <a href='https://developer.themoviedb.org/reference/intro/getting-started' target='_blank'>TMDB API</a>.</p>
+      <p className={styles.disclaimer}>Developed by
+        <a href='https://www.linkedin.com/in/joao-gabriel-fa/' target='_blank'> João Gabriel de Freitas Antunes </a> 
+        based on Netflix site to study React.js, all the data is from the
+        <a href='https://developer.themoviedb.org/reference/intro/getting-started' target='_blank'> TMDB API</a>.
+      </p>
     </footer>
   )
 }

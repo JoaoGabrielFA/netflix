@@ -1,5 +1,5 @@
 import styles from './LoadingScreen.module.css';
-import { BiLoaderAlt } from 'react-icons/bi'
+import { BiLoaderAlt } from 'react-icons/bi';
 
 function LoadingScreen() {
   return (
