@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import { BsBell, BsSquare } from 'react-icons/bs';
 import SearchBar from './SearchBar';
+import DropdownMenu from './DropdownMenu';
 
 function Navbar() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
   const [navbarColor, setNavbarColor] = useState('00000000');
   const linearGradient = `linear-gradient(to bottom, #000000, #${navbarColor})`;
   const thisPage = localStorage.getItem('actualPage');
@@ -29,20 +31,38 @@ function Navbar() {
     return thisPage === page ? styles.bold : '';
   };
 
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 1024);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <header className={styles.navbar} style={{ background: linearGradient }}>
       <div className={styles.navbarLeft}>
         <Link className={styles.logo} to='/home' onClick={changePage}><img src={logoPath} /></Link>
         <nav>
-          <Link className={checkPage('Home')} to='/home' onClick={changePage}>Home</Link>
-          <Link className={checkPage('Tv')} to='/tvshows' onClick={changePage}>TV Shows</Link>
-          <Link className={checkPage('Movies')} to='/movies' onClick={changePage}>Movies</Link>
-          <Link className={checkPage('News')} to='/news' onClick={changePage}>News & Popular</Link>
-          <Link className={checkPage('MyList')} to='/mylist' onClick={changePage}>My List</Link>
+          {isMobile ? (
+            <DropdownMenu changePage={changePage} checkPage={checkPage} />
+          ) : (
+            <>
+              <Link className={checkPage('Home')} to='/home' onClick={changePage}>Home</Link>
+              <Link className={checkPage('Tv')} to='/tvshows' onClick={changePage}>TV Shows</Link>
+              <Link className={checkPage('Movies')} to='/movies' onClick={changePage}>Movies</Link>
+              <Link className={checkPage('News')} to='/news' onClick={changePage}>News & Popular</Link>
+              <Link className={checkPage('MyList')} to='/mylist' onClick={changePage}>My List</Link>
+            </>
+          )}
+
         </nav>
       </div>
       <div className={styles.navbarRight}>
-        <SearchBar/>
+        <SearchBar />
         <BsBell />
         <BsSquare />
       </div>

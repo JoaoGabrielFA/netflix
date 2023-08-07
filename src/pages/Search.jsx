@@ -1,6 +1,6 @@
-import styles from '../components/Row.module.css';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import styles from './Search.module.css';
 import { search } from '../database/tmdbAPI';
 import Card from '../components/Card';
 import { responsiveCardWidth } from '../database/cardWidth';
@@ -16,16 +16,15 @@ function Search() {
 
   useEffect(() => {
     const handleChange = async (value) => {
-      search(value).then(resp => setSearchData(resp))
-      document.getElementById('searchBar').addEventListener('input', searchData);
-    }
+      search(value).then(resp => setSearchData(resp));
+    };
 
-    handleChange(name)
+    handleChange(name);
   })
 
   return (
-    <main className={styles.row} style={{ paddingTop: '80px' }}>
-      <div className={styles.rowCards} style={{ flexWrap: 'wrap' }}>
+    <main className={styles.search} >
+      <div className={styles.searchCards} >
         {searchData.length > 0 && searchData.map((element, key) => {
           if (element.poster_path != null) {
             return <Card element={element} key={key} customClass={'page'} width={cardWidth} />

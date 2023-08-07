@@ -1,7 +1,6 @@
 import { api_base, api_key } from '../database/tmdbAPI';
 
-export let myList = [];
-myList = JSON.parse(localStorage.getItem('My List')) == null ? myList = [] : myList = JSON.parse(localStorage.getItem('My List', myList));
+export const myList =  JSON.parse(localStorage.getItem('My List')) || []; 
 
 export const addToMyList = (id, type) => {
   const index = myList.findIndex((element) => element[0] === id && element[1] === type);
@@ -14,18 +13,16 @@ export const addToMyList = (id, type) => {
 };
 
 export const getMyList = async () => {
-  return Promise.all(myList.map((element, key) => {
-    return fetch(`${api_base}/${element[1]}/${element[0]}?${api_key}`).then(response => (response.json()));
-  }));
+  try{
+    return await Promise.all(myList.map(async element => {
+      return await fetch(`${api_base}/${element[1]}/${element[0]}?${api_key}`).then(response => (response.json()));
+    }));
+  } catch (error) {
+    console.log('ERROR: ' + error);
+    return [];
+  };
 };
 
 export const areInMyList = (id) => {
-  let inMyList;
-  for (let i = 0; i < myList.length; i++) {
-    if (myList[i].includes(id)) {
-      inMyList = true;
-      break;
-    }
-  }
-  return inMyList;
+  return myList.some(element => element.includes(id));
 };

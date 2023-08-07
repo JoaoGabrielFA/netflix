@@ -1,0 +1,40 @@
+.myList {
+  width: 100%;
+  padding-top: 60px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.myListCards {
+  position: relative;
+  flex-wrap: wrap;
+  display: flex;
+  transition: 1s;
+}
+
+.myListTitle {
+  font-size: 1.8rem;
+  color: #FFFFFF;
+  margin-left: 50px;
+}
+
+.myListEmpty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 80vh;
+}
+
+.myListEmptyMessage {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+.myListEmptyMessageDescription {
+  font-size: .9rem;
+  color: #AAAAAA;
+  text-align: center;
+}

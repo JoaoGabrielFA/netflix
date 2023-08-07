@@ -1,0 +1,13 @@
+.search {
+  width: 100%;
+  padding-top: 70px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.searchCards {
+  position: relative;
+  flex-wrap: wrap;
+  display: flex;
+  transition: 1s;
+}

@@ -15,20 +15,24 @@ function Card({ width, element, customClass }) {
 
   const clearSearchBar = () => {
     localStorage.setItem('SearchBarContent', '');
-  }
+  };
 
   const handleAddToMyList = async () => {
     addToMyList(id, type);
     setInMyList(areInMyList(id));
   };
 
+  const handleCheckMyList = () => {
+    setInMyList(areInMyList(id));
+  }
+
   useEffect(() => {
     setInMyList(areInMyList(id));
     setCardWidth(width);
-  })
+  });
 
   return (
-    <div className={`${styles.card} ${styles[customClass]}`}>
+    <div className={`${styles.card} ${styles[customClass]}`} onMouseOver={handleCheckMyList}>
       <Link
         to={`/${type}/${id}`}
         id={id}>

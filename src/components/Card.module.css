@@ -47,28 +47,47 @@
   margin-left: 50px;
 }
 
-.page:last-child {
-  margin-right: 0;
+@media screen and (max-width: 1024px) {
+  .page:nth-child(6n+1) {
+    margin-left: 0;
+  }
+
+  .page:nth-child(5n+1) {
+    margin-left: 50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card:hover>.addToMyListButton {
+    display: none;
+  }
+  
+  .page:nth-child(6n+1),
+  .page:nth-child(5n+1) {
+    margin-left: 0;
+  }
+
+  .page:nth-child(4n+1) {
+    margin-left: 50px;
+  }
 }
 
 @media screen and (max-width: 600px) {
-  .card:first-child {
-    margin-left: 10px;
-  }
-
-  .card:last-child {
-    margin-right: 10px;
+  .page:nth-child(6n+1),
+  .page:nth-child(5n+1),
+  .page:nth-child(4n+1) {
+    margin-left: 0;
   }
 
   .page:nth-child(3n+1) {
     margin-left: 10px;
   }
 
-  .page:last-child {
-    margin-right: 0;
+  .card:first-child {
+    margin-left: 10px;
   }
 
-  .addToMyListButton:hover {
-    display: none;
+  .card:last-child {
+    margin-right: 10px;
   }
 }

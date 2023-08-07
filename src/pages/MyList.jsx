@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getMyList } from '../database/myList';
-import styles from '../components/Row.module.css';
+import styles from './MyList.module.css';
 import Card from '../components/Card';
 import LoadingScreen from '../components/LoadingScreen';
 import { responsiveCardWidth } from '../database/cardWidth';
@@ -35,11 +35,11 @@ function MyList() {
         <LoadingScreen />
       ) : (
         <>
-          <div className={styles.row} style={{ paddingTop: '60px' }}>
+          <div className={styles.myList}>
             {myList.length > 0 ? (
               <>
-                <p>My List</p>
-                <div className={styles.rowCards} style={{ flexWrap: 'wrap' }}>
+                <p className={styles.myListTitle}>My List</p>
+                <div className={styles.myListCards}>
                   {myList.map((element, key) => {
                     if (element.poster_path != null) {
                       return <Card element={element} key={key} customClass={'page'} width={cardWidth} />;
@@ -48,7 +48,10 @@ function MyList() {
                 </div>
               </>
             ) : (
-              <p style={{ margin: 'auto', minHeight: '80vh' }}>Sua lista está vazia.</p>
+              <div className={styles.myListEmpty}>
+                <span className={styles.myListEmptyMessage}>YOUR LIST IS EMPTY</span>
+                <span className={styles.myListEmptyMessageDescription}>YOU CAN ADD SOMETHING TO YOUR LIST BY PRESSING THE PLUS SIGN (+) ON THE CARD</span>
+              </div>
             )}
           </div>
         </>
