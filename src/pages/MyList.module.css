@@ -5,17 +5,17 @@
   overflow: hidden;
 }
 
+.myListTitle {
+  font-size: 1.8rem;
+  color: #FFFFFF;
+  margin-left: 50px;
+}
+
 .myListCards {
   position: relative;
   flex-wrap: wrap;
   display: flex;
   transition: 1s;
-}
-
-.myListTitle {
-  font-size: 1.8rem;
-  color: #FFFFFF;
-  margin-left: 50px;
 }
 
 .myListEmpty {
@@ -37,4 +37,10 @@
   font-size: .9rem;
   color: #AAAAAA;
   text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .myListTitle {
+    margin-left: 10px;
+  }
 }
