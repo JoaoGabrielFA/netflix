@@ -121,5 +121,6 @@
   .disclaimer,
   .disclaimer a {
     font-size: .9rem;
+    margin-bottom: 80px;
   }
 }
