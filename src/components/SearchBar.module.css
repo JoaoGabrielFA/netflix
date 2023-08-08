@@ -56,3 +56,15 @@
   width: 0;
   padding: 0;
 }
+
+@media screen and (max-width: 768px) {
+  .searchBarOpen {
+    width: 180px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .searchBarOpen {
+    width: 140px;
+  }
+}
