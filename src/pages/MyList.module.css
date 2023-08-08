@@ -41,6 +41,10 @@
 
 @media screen and (max-width: 600px) {
   .myListTitle {
-    margin-left: 10px;
+    display: none;
+  }
+
+  .myListCards {
+    margin-top: 10px;
   }
 }
