@@ -71,6 +71,6 @@
   }
 
   .rowCards {
-    overflow-x: visible;
+    overflow-x: auto;
   }
 }
