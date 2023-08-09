@@ -1,7 +1,7 @@
-import styles from '../components/NewsPage.module.css';
+import { useEffect, useState } from 'react';
+import styles from './News.module.css';
 import NewsCard from '../components/NewsCard';
 import LoadingScreen from '../components/LoadingScreen';
-import { useEffect, useState } from 'react';
 import { getData } from '../database/tmdbAPI';
 
 function News() {
@@ -35,8 +35,8 @@ function News() {
         <LoadingScreen />
       ) : (
         <>
-          <section className={styles.newsPage}>
-            <div className={styles.newsPageList}>
+          <section className={styles.news}>
+            <div className={styles.newsList}>
               {data.filter(element => new Date(element.release_date) >= new Date(today)).map((element, key) => (
                 element.backdrop_path && <NewsCard data={element} key={key} />
               ))}

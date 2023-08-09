@@ -26,9 +26,12 @@ function Card({ width, element, customClass }) {
     setInMyList(areInMyList(id));
   }
 
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     setInMyList(areInMyList(id));
     setCardWidth(width);
+    setIsLoading(false);
   });
 
   return (
