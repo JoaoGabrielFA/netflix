@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './DropdownMenu.module.css';
+import { AiFillCaretDown } from 'react-icons/ai';
 
-function DropdownMenu({changePage , checkPage}) {
+function DropdownMenu({ changePage, checkPage }) {
   const [isListVisible, setListVisible] = useState(false);
   let mouseLeaveTime;
 
@@ -18,7 +19,7 @@ function DropdownMenu({changePage , checkPage}) {
   };
 
   return (
-    <div className={styles.dropdownMenu} onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave} > Browse &#9207;
+    <div className={styles.dropdownMenu} onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave} > Browse <AiFillCaretDown />
       {isListVisible && (
         <ul className={styles.dropdownMenuList} >
           <Link className={checkPage('Home')} to='/home' onClick={changePage}>Home</Link>

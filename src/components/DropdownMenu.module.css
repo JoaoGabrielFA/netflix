@@ -1,4 +1,7 @@
 .dropdownMenu {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   color: white;
   position: relative;
   cursor: pointer;
