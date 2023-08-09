@@ -4,10 +4,10 @@ export const api_base = 'https://api.themoviedb.org/3';
 export const getData = async (endpoint, filter) => {
   try {
     const page1 = await fetch(`${api_base + endpoint + api_key}&page=1&include_adult=false${filter}`).then(resp => resp.json()).then(resp => resp.results);
-    // const page2 = await fetch(`${api_base + endpoint + api_key}&page=2&include_adult=false${filter}`).then(resp => resp.json()).then(resp => resp.results);
-    // const page3 = await fetch(`${api_base + endpoint + api_key}&page=3&include_adult=false${filter}`).then(resp => resp.json()).then(resp => resp.results);
-    // const data = [...page1, ...page2, ...page3];
-    return page1;
+    const page2 = await fetch(`${api_base + endpoint + api_key}&page=2&include_adult=false${filter}`).then(resp => resp.json()).then(resp => resp.results);
+    const page3 = await fetch(`${api_base + endpoint + api_key}&page=3&include_adult=false${filter}`).then(resp => resp.json()).then(resp => resp.results);
+    const data = [...page1, ...page2, ...page3];
+    return data;
   } catch (error) {
     console.log('ERROR: ' + error);
     return [];
