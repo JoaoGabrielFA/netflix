@@ -18,6 +18,10 @@ This is a [Netflix](https://www.netflix.com/browse) clone project developed as p
 
 ## How It Works
 
+### Pages
+
+![Navbar Exemple Gif](https://github.com/JoaoGabrielFA/netflix/assets/112104535/f6173d07-fd65-434f-b578-f9644fb2a0a3)
+
 You can access the pages from the top navbar (bottom on mobile). Here's a brief description of each one:
 
 - **Home** 
@@ -34,3 +38,9 @@ You can access the pages from the top navbar (bottom on mobile). Here's a brief 
 
 - **My List** 
 > Here, all the shows you've added to your list are displayed.
+
+### Search
+
+![Search Exemple Gif](https://github.com/JoaoGabrielFA/netflix/assets/112104535/e38e54db-9f1a-4bea-abd4-9a27bb55e8aa)
+
+You can search for a show by clicking on the magnifying glass in the navbar.
