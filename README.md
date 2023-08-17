@@ -44,3 +44,13 @@ You can access the pages from the top navbar (bottom on mobile). Here's a brief 
 ![Search Exemple Gif](https://github.com/JoaoGabrielFA/netflix/assets/112104535/e38e54db-9f1a-4bea-abd4-9a27bb55e8aa)
 
 You can search for a show by clicking on the magnifying glass in the navbar.
+
+### Adding to My List
+
+<div>
+  <img align="center" width="76%" alt="Static Badge" src="https://github.com/JoaoGabrielFA/netflix/assets/112104535/b5e4d9f3-3bce-4e1c-8aaa-a179bad3f539">
+  <img align="center" width="23.5%" alt="Static Badge" src="https://github.com/JoaoGabrielFA/netflix/assets/112104535/8b07850e-1cb9-442a-bc05-0dca513d80bd">
+  <br><br>
+</div>
+
+You can add shows to "My List" by clicking the plus sign (+) on the card or the show page, and to remove, you just need to click again.
