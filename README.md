@@ -48,8 +48,8 @@ You can search for a show by clicking on the magnifying glass in the navbar.
 ### Adding to My List
 
 <div>
-  <img align="center" width="76%" alt="Static Badge" src="https://github.com/JoaoGabrielFA/netflix/assets/112104535/b5e4d9f3-3bce-4e1c-8aaa-a179bad3f539">
-  <img align="center" width="23.5%" alt="Static Badge" src="https://github.com/JoaoGabrielFA/netflix/assets/112104535/8b07850e-1cb9-442a-bc05-0dca513d80bd">
+  <img align="center" width="650px" alt="Static Badge" src="https://github.com/JoaoGabrielFA/netflix/assets/112104535/b5e4d9f3-3bce-4e1c-8aaa-a179bad3f539">
+  <img align="center" width="200px" alt="Static Badge" src="https://github.com/JoaoGabrielFA/netflix/assets/112104535/8b07850e-1cb9-442a-bc05-0dca513d80bd">
   <br><br>
 </div>
 
