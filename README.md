@@ -10,15 +10,15 @@
   </div>
 </div>
 
-## Introduction
+# Introduction
 
 This is a [Netflix](https://www.netflix.com/browse) clone project developed as part of my learning in React.JS. I used the [TMDB API](https://developer.themoviedb.org/docs) to fetch all movie and TV show data. The main goal of this project is to enhance my front-end development skills as I recreate the attractive and modern interface of Netflix.
 
 <br><br>
 
-## How It Works
+# How It Works
 
-### Pages
+## Pages
 
 ![Navbar Exemple Gif](https://github.com/JoaoGabrielFA/netflix/assets/112104535/f6173d07-fd65-434f-b578-f9644fb2a0a3)
 
@@ -39,13 +39,13 @@ You can access the pages from the top navbar (bottom on mobile). Here's a brief 
 - **My List** 
 > Here, all the shows you've added to your list are displayed.
 
-### Search
+## Search
 
 ![Search Exemple Gif](https://github.com/JoaoGabrielFA/netflix/assets/112104535/e38e54db-9f1a-4bea-abd4-9a27bb55e8aa)
 
 You can search for a show by clicking on the magnifying glass in the navbar.
 
-### Adding to My List
+## Adding to My List
 
 <div>
   <img align="center" width="550px" alt="Static Badge" src="https://github.com/JoaoGabrielFA/netflix/assets/112104535/b5e4d9f3-3bce-4e1c-8aaa-a179bad3f539">
@@ -54,3 +54,7 @@ You can search for a show by clicking on the magnifying glass in the navbar.
 </div>
 
 You can add shows to "My List" by clicking the plus sign (+) on the card or the show page, and to remove, you just need to click again.
+
+## Play
+
+By pressing play, you can watch a trailer or promotional video of the show if available.
