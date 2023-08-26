@@ -57,4 +57,6 @@ You can add shows to "My List" by clicking the plus sign (+) on the card or the 
 
 ## Play
 
+![Play Button Exemple](https://github.com/JoaoGabrielFA/netflix/assets/112104535/822283e4-ad63-46ab-b9d6-3d9b82a1833c)
+
 By pressing play, you can watch a trailer or promotional video of the show if available.
