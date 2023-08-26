@@ -23,6 +23,7 @@ This is a [Netflix](https://www.netflix.com/browse) clone project developed as p
   * [Search](#search)
   * [Adding to My List](#adding-to-my-list)
   * [Play](#play)
+* [Technologies](#technologies)
 
 # How It Works
 
@@ -68,3 +69,11 @@ You can add shows to "My List" by clicking the plus sign (+) on the card or the 
 ![Play Button Exemple](https://github.com/JoaoGabrielFA/netflix/assets/112104535/822283e4-ad63-46ab-b9d6-3d9b82a1833c)
 
 By pressing play, you can watch a trailer or promotional video of the show if available.
+
+# Technologies
+
+- ``HTML``
+- ``CSS``
+- ``Javascript``
+- ``React.JS``
+- ``TMDB API``
