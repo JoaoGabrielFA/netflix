@@ -16,6 +16,10 @@ This is a [Netflix](https://www.netflix.com/browse) clone project developed as p
 
 <br><br>
 
+# Index 
+
+* [How It Works](#how-it-works)
+
 # How It Works
 
 ## Pages
