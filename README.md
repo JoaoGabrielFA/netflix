@@ -19,6 +19,15 @@ This is a [Netflix](https://www.netflix.com/browse) clone project developed as p
 # Index 
 
 * [How It Works](#how-it-works)
+  * [Pages](#pages)
+      * [Home](#home)
+      * [Tv Shows](#tv-shows)
+      * [Movies](#movies)
+      * [News & Popular](#news-&-popular)
+      * [My List](#my-list)
+  * [Search](#search)
+  * [Adding to My List](#adding-to-my-list)
+  * [Play](#play)
 
 # How It Works
 
