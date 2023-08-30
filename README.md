@@ -14,7 +14,7 @@
 
 This is a [Netflix](https://www.netflix.com/browse) clone project developed as part of my learning in React.JS. I used the [TMDB API](https://developer.themoviedb.org/docs) to fetch all movie and TV show data. The main goal of this project is to enhance my front-end development skills as I recreate the attractive and modern interface of Netflix.
 
-<br><br>
+You can test [HERE!](https://joaogabrielfa.github.io/netflix)
 
 # Index 
 
@@ -24,6 +24,7 @@ This is a [Netflix](https://www.netflix.com/browse) clone project developed as p
   * [Adding to My List](#adding-to-my-list)
   * [Play](#play)
 * [Technologies](#technologies)
+* [Made By](#made-by)
 
 # How It Works
 
@@ -77,3 +78,6 @@ By pressing play, you can watch a trailer or promotional video of the show if av
 - ``Javascript``
 - ``React.JS``
 - ``TMDB API``
+
+# Made By 
+[João Gabriel de Freitas Antunes](https://www.linkedin.com/in/joao-gabriel-fa/)
